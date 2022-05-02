@@ -1,0 +1,99 @@
+body {
+    font-family: "Lato", sans-serif;
+}
+
+input:focus {outline:none;}
+
+.page-header {
+    background-color: #112B3C;
+}
+
+.page-header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.img-logo {
+    width: 100px;
+    height:auto;
+    margin: 0.5em;
+}
+
+.page-interactive {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0.3em;
+}
+
+.search-bar-div {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 0.3%;
+    margin-right: 4%;
+}
+
+.search-bar {
+    width: 100%;
+    height: 30px;
+    border: 1.5px solid #707070;
+    border-radius: 4px;
+}
+
+.search-button {
+    width: 1.5em;
+    height: auto;
+    margin-left: 0.5em;
+    filter: invert(1);
+}
+
+.cart-button {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 140px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #F66B0E;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-right: 0.3%;
+ }
+ 
+.cart-button-image {
+    width: 25%;
+    height: auto;
+    transform: scaleX(-1);
+}
+
+.cart-button-text {
+    font-size: 90%;
+    
+    font-weight: bold;
+    margin-left: 0.05em;
+    color: white;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: red;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
