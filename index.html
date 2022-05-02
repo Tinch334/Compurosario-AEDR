@@ -12,7 +12,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@300&display=swap" rel="stylesheet">
 
-    <!-- <script type="text/javascript" src="scripts/theme.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+    integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Jquery cdn -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- slick script cdn -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+    integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="script.js"></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -92,66 +107,50 @@
         <a href="#">MONITORES</a>
     </div>
 
-    <!--<div class="carousel">
-        <div class="carousel-item">
-            <img src="" alt="product">
+
+
+    <div class="main-body">
+        
+        <div class="carousel-title">
+            <h1>Productos en descuento</h1>
         </div>
-        <div class="carousel-item">
-            <img src="" alt="product">
+        
+        <div class="carousel">
+            <div class="carousel-item" id="carousel-item">
+                <img class="img" src="Images/Main page/products/p1.webp" alt="product">
+                <div class="prod-info" id="prod-info">Informacion producto 1</div>
+            </div>
+            <div class="carousel-item" id="carousel-item">
+                <img width="224" height="224" src="Images/Main page/products/p2.webp" alt="product">
+                <div class="prod-info" id="prod-info">Informacion producto 2</div>
+            </div>
+            <div class="carousel-item" id="carousel-item">
+                <img width="224" height="224" src="Images/Main page/products/p3.webp" alt="product">
+                <div class="prod-info" id="prod-info">Informacion producto 3</div>
+            </div>
+            <div class="carousel-item" id="carousel-item">
+                <img width="224" height="224" src="Images/Main page/products/p4.webp" alt="product">
+                <div class="prod-info" class="prod-info" id="prod-info">Informacion producto 4</div>
+            </div>
+            <div class="carousel-item" id="carousel-item">
+                <img width="224" height="224" src="Images/Main page/products/p5.webp" alt="product">
+                <div class="prod-info" id="prod-info">Informacion producto 5</div>
+            </div>
+            <div class="carousel-item" id="carousel-item">
+                <img width="224" height="224" src="Images/Main page/products/p6.webp" alt="product">
+                <div class="prod-info" id="prod-info">Informacion producto 6</div>
+            </div>
+            <div class="carousel-item" id="carousel-item">
+                <img width="224" height="224" src="Images/Main page/products/p7.webp" alt="product">
+                <div class="prod-info" id="prod-info">Informacion producto 7</div>
+            </div>
+            <div class="carousel-item" id="carousel-item">
+                <img width="224" height="224" src="Images/Main page/products/p8.webp" alt="product">
+                <div class="prod-info" id="prod-info">Informacion producto 8</div>
+            </div>
         </div>
-        <div class="carousel-item">
-            <img src="" alt="product">
-        </div>
-        <div class="carousel-item">
-            <img src="" alt="product">
-        </div>
-        <div class="carousel-item">
-            <img src="" alt="product">
-        </div>
-        <div class="carousel-item">
-            <img src="" alt="product">
-        </div>
-        <div class="carousel-item">
-            <img src="" alt="product">
-        </div>
-        <div class="carousel-item">
-            <img src="" alt="product">
-        </div>
-    </div>-->
 
-
-    <div style="background-color:aquamarine">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lectus ligula, tincidunt et tellus ac, elementum venenatis justo. Mauris varius vulputate quam quis efficitur. Cras in quam enim. Etiam luctus facilisis neque, in egestas ligula convallis sit amet. Duis eu efficitur purus. Phasellus quis pellentesque sem. Nam non nisi dapibus, eleifend dolor nec, gravida quam. Nulla eget orci et felis ultricies rhoncus. Duis venenatis felis ac dui scelerisque, at lobortis nulla maximus. Nullam at elit lorem. Nam ut posuere risus. Sed quis maximus tellus.
-
-Praesent rutrum sodales ullamcorper. Suspendisse ac pharetra lorem. Praesent eu mauris in quam ultrices fringilla. Donec eu neque id ex dictum condimentum. Vestibulum tincidunt posuere diam, at sollicitudin ante rutrum quis. Phasellus gravida semper efficitur. Quisque vestibulum aliquam tellus, et vestibulum eros tincidunt et. Integer massa neque, interdum sit amet tortor lobortis, blandit aliquet diam. Curabitur consequat sapien vitae dignissim tincidunt. Nullam diam ipsum, lobortis id mi quis, tempor consectetur erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-
-Fusce ac vehicula dui. Maecenas imperdiet accumsan mi ut viverra. Proin interdum est eu sem scelerisque, sed sodales ligula rutrum. Donec lobortis condimentum est, vitae consequat urna vulputate ut. Donec ut ante sed ligula lobortis vehicula. Proin quis magna nec nisl interdum laoreet ut ut lectus. Sed hendrerit tortor et ante euismod, ultricies scelerisque sapien condimentum. Suspendisse non diam eu dolor porttitor congue vel sit amet sem.
-
-Nunc ut magna nec elit mattis hendrerit. Suspendisse et laoreet nulla. Mauris finibus nibh semper accumsan laoreet. Vivamus vel accumsan nisi. Duis pulvinar nulla enim, at blandit mi ultrices ac. Integer sit amet arcu eget leo pretium commodo vel mollis purus. Donec eget risus a mauris dictum tristique. Nulla ac dolor a elit pulvinar dignissim vitae sed diam. Cras lobortis, leo nec feugiat egestas, massa felis lobortis urna, et molestie felis ipsum vitae ante. Nulla ultricies urna arcu, ac dapibus risus fringilla vitae. Aenean aliquet suscipit ullamcorper.
-
-Fusce fringilla ex lorem, ut placerat magna fermentum at. In sagittis mi vitae mi interdum, quis porta ligula tristique. Proin dignissim justo nec magna bibendum ultricies. Phasellus at ligula sem. Pellentesque laoreet porta libero, vel tristique sem volutpat vitae. Suspendisse porta est tortor, a tempus enim tincidunt sed. In lacinia dui eu sapien scelerisque, non ultricies felis sagittis. Vivamus ut turpis in risus interdum gravida et id erat. Nullam scelerisque elit ut gravida posuere. Ut ullamcorper, tortor nec elementum fringilla, nisl elit cursus turpis, at aliquet nulla ligula nec purus. Sed id enim placerat, laoreet sem eu, semper magna. Nunc tempor, felis accumsan auctor pretium, est odio rutrum leo, eu scelerisque erat justo eget enim.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lectus ligula, tincidunt et tellus ac, elementum venenatis justo. Mauris varius vulputate quam quis efficitur. Cras in quam enim. Etiam luctus facilisis neque, in egestas ligula convallis sit amet. Duis eu efficitur purus. Phasellus quis pellentesque sem. Nam non nisi dapibus, eleifend dolor nec, gravida quam. Nulla eget orci et felis ultricies rhoncus. Duis venenatis felis ac dui scelerisque, at lobortis nulla maximus. Nullam at elit lorem. Nam ut posuere risus. Sed quis maximus tellus.
-
-Praesent rutrum sodales ullamcorper. Suspendisse ac pharetra lorem. Praesent eu mauris in quam ultrices fringilla. Donec eu neque id ex dictum condimentum. Vestibulum tincidunt posuere diam, at sollicitudin ante rutrum quis. Phasellus gravida semper efficitur. Quisque vestibulum aliquam tellus, et vestibulum eros tincidunt et. Integer massa neque, interdum sit amet tortor lobortis, blandit aliquet diam. Curabitur consequat sapien vitae dignissim tincidunt. Nullam diam ipsum, lobortis id mi quis, tempor consectetur erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-
-Fusce ac vehicula dui. Maecenas imperdiet accumsan mi ut viverra. Proin interdum est eu sem scelerisque, sed sodales ligula rutrum. Donec lobortis condimentum est, vitae consequat urna vulputate ut. Donec ut ante sed ligula lobortis vehicula. Proin quis magna nec nisl interdum laoreet ut ut lectus. Sed hendrerit tortor et ante euismod, ultricies scelerisque sapien condimentum. Suspendisse non diam eu dolor porttitor congue vel sit amet sem.
-
-Nunc ut magna nec elit mattis hendrerit. Suspendisse et laoreet nulla. Mauris finibus nibh semper accumsan laoreet. Vivamus vel accumsan nisi. Duis pulvinar nulla enim, at blandit mi ultrices ac. Integer sit amet arcu eget leo pretium commodo vel mollis purus. Donec eget risus a mauris dictum tristique. Nulla ac dolor a elit pulvinar dignissim vitae sed diam. Cras lobortis, leo nec feugiat egestas, massa felis lobortis urna, et molestie felis ipsum vitae ante. Nulla ultricies urna arcu, ac dapibus risus fringilla vitae. Aenean aliquet suscipit ullamcorper.
-Praesent rutrum sodales ullamcorper. Suspendisse ac pharetra lorem. Praesent eu mauris in quam ultrices fringilla. Donec eu neque id ex dictum condimentum. Vestibulum tincidunt posuere diam, at sollicitudin ante rutrum quis. Phasellus gravida semper efficitur. Quisque vestibulum aliquam tellus, et vestibulum eros tincidunt et. Integer massa neque, interdum sit amet tortor lobortis, blandit aliquet diam. Curabitur consequat sapien vitae dignissim tincidunt. Nullam diam ipsum, lobortis id mi quis, tempor consectetur erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-
-Fusce ac vehicula dui. Maecenas imperdiet accumsan mi ut viverra. Proin interdum est eu sem scelerisque, sed sodales ligula rutrum. Donec lobortis condimentum est, vitae consequat urna vulputate ut. Donec ut ante sed ligula lobortis vehicula. Proin quis magna nec nisl interdum laoreet ut ut lectus. Sed hendrerit tortor et ante euismod, ultricies scelerisque sapien condimentum. Suspendisse non diam eu dolor porttitor congue vel sit amet sem.
-
-Nunc ut magna nec elit mattis hendrerit. Suspendisse et laoreet nulla. Mauris finibus nibh semper accumsan laoreet. Vivamus vel accumsan nisi. Duis pulvinar nulla enim, at blandit mi ultrices ac. Integer sit amet arcu eget leo pretium commodo vel mollis purus. Donec eget risus a mauris dictum tristique. Nulla ac dolor a elit pulvinar dignissim vitae sed diam. Cras lobortis, leo nec feugiat egestas, massa felis lobortis urna, et molestie felis ipsum vitae ante. Nulla ultricies urna arcu, ac dapibus risus fringilla vitae. Aenean aliquet suscipit ullamcorper.
-
-Fusce fringilla ex lorem, ut placerat magna fermentum at. In sagittis mi vitae mi interdum, quis porta ligula tristique. Proin dignissim justo nec magna bibendum ultricies. Phasellus at ligula sem. Pellentesque laoreet porta libero, vel tristique sem volutpat vitae. Suspendisse porta est tortor, a tempus enim tincidunt sed. In lacinia dui eu sapien scelerisque, non ultricies felis sagittis. Vivamus ut turpis in risus interdum gravida et id erat. Nullam scelerisque elit ut gravida posuere. Ut ullamcorper, tortor nec elementum fringilla, nisl elit cursus turpis, at aliquet nulla ligula nec purus. Sed id enim placerat, laoreet sem eu, semper magna. Nunc tempor, felis accumsan auctor pretium, est odio rutrum leo, eu scelerisque erat justo eget enim.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lectus ligula, tincidunt et tellus ac, elementum venenatis justo. Mauris varius vulputate quam quis efficitur. Cras in quam enim. Etiam luctus facilisis neque, in egestas ligula convallis sit amet. Duis eu efficitur purus. Phasellus quis pellentesque sem. Nam non nisi dapibus, eleifend dolor nec, gravida quam. Nulla eget orci et felis ultricies rhoncus. Duis venenatis felis ac dui scelerisque, at lobortis nulla maximus. Nullam at elit lorem. Nam ut posuere risus. Sed quis maximus tellus.
-
-Praesent rutrum sodales ullamcorper. Suspendisse ac pharetra lorem. Praesent eu mauris in quam ultrices fringilla. Donec eu neque id ex dictum condimentum. Vestibulum tincidunt posuere diam, at sollicitudin ante rutrum quis. Phasellus gravida semper efficitur. Quisque vestibulum aliquam tellus, et vestibulum eros tincidunt et. Integer massa neque, interdum sit amet tortor lobortis, blandit aliquet diam. Curabitur consequat sapien vitae dignissim tincidunt. Nullam diam ipsum, lobortis id mi quis, tempor consectetur erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-
-Fusce ac vehicula dui. Maecenas imperdiet accumsan mi ut viverra. Proin interdum est eu sem scelerisque, sed sodales ligula rutrum. Donec lobortis condimentum est, vitae consequat urna vulputate ut. Donec ut ante sed ligula lobortis vehicula. Proin quis magna nec nisl interdum laoreet ut ut lectus. Sed hendrerit tortor et ante euismod, ultricies scelerisque sapien condimentum. Suspendisse non diam eu dolor porttitor congue vel sit amet sem.
-Fusce fringilla ex lorem, ut placerat magna fermentum at. In sagittis mi vitae mi interdum, quis porta ligula tristique. Proin dignissim justo nec magna bibendum ultricies. Phasellus at ligula sem. Pellentesque laoreet porta libero, vel tristique sem volutpat vitae. Suspendisse porta est tortor, a tempus enim tincidunt sed. In lacinia dui eu sapien scelerisque, non ultricies felis sagittis. Vivamus ut turpis in risus interdum gravida et id erat. Nullam scelerisque elit ut gravida posuere. Ut ullamcorper, tortor nec elementum fringilla, nisl elit cursus turpis, at aliquet nulla ligula nec purus. Sed id enim placerat, laoreet sem eu, semper magna. Nunc tempor, felis accumsan auctor pretium, est odio rutrum leo, eu scelerisque erat justo eget enim.
-
-
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ea magnam perferendis pariatur odit corporis. Sunt facere aliquam earum doloribus. In delectus quas dolorem sit enim soluta accusamus debitis Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, dicta tenetur excepturi corporis, id soluta consequuntur tempora fugiat neque veritatis eligendi laudantium a repellat aperiam omnis nam. Minima, ab veniam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore illum excepturi, velit officiis voluptates labore provident nostrum ipsa voluptatem eum in laborum repudiandae, quam vitae libero. Sed dolore tempore rerum!</p>
 
     </div>
 
