@@ -170,7 +170,6 @@
 }
 .lSAction > .lSPrev {
     background-position: 0 0;
-    left: 20px;
 }
 .lSAction > .lSNext {
     background-position: -32px 0;

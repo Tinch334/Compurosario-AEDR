@@ -1,9 +1,20 @@
 $(document).ready(function() {
-  $('#autoWidth').lightSlider({
+  $('#autoWidthDiscount').lightSlider({
       autoWidth:true,
       loop:true,
       onSliderLoad: function() {
-          $('#autoWidth').removeClass('cS-hidden');
+          $('#autoWidthDiscount').removeClass('cS-hidden');
+      } 
+  });
+});
+
+
+$(document).ready(function() {
+  $('#autoWidthNew').lightSlider({
+      autoWidth:true,
+      loop:true,
+      onSliderLoad: function() {
+          $('#autoWidthNew').removeClass('cS-hidden');
       } 
   });  
 });
