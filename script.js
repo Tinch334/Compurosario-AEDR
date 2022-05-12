@@ -1,20 +1,30 @@
 $(document).ready(function() {
+  document.getElementsByTagName("html")[0].style.visibility = "visible";
+});
+
+$(document).ready(function() {
   $('#autoWidthDiscount').lightSlider({
       autoWidth:true,
+      auto:true,
       loop:true,
-      onSliderLoad: function() {
-          $('#autoWidthDiscount').removeClass('cS-hidden');
-      } 
+      pauseOnHover: true,
+      onBeforeSlide: function (el) {
+            $('#current').text(el.getCurrentSlideCount());
+      }
   });
+  
 });
 
 
 $(document).ready(function() {
   $('#autoWidthNew').lightSlider({
       autoWidth:true,
+      auto:true,
       loop:true,
-      onSliderLoad: function() {
-          $('#autoWidthNew').removeClass('cS-hidden');
-      } 
-  });  
+      pauseOnHover: true,
+      onBeforeSlide: function (el) {
+            $('#current').text(el.getCurrentSlideCount());
+      }
+  });
+    
 });

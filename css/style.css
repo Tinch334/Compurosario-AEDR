@@ -1,3 +1,7 @@
+html {
+    visibility: hidden;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
 }
@@ -389,11 +393,12 @@ a{
 .start-footer {
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: #112B3C;
     padding-bottom: 2%;
 }
 
-.footer-conteiner {
+.info-footer {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
@@ -402,11 +407,11 @@ a{
     color: white;
 }
 
-.footer-conteiner div {
+.info-footer div {
     width: 30%;
 }
 
-.footer-conteiner h3 {
+.info-footer h3 {
     font-weight: bold;
 }
 
