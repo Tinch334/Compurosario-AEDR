@@ -394,8 +394,9 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    color: white;
     background-color: #112B3C;
-    padding-bottom: 2%;
 }
 
 .info-footer {
@@ -404,7 +405,6 @@ a{
     justify-content: space-around;
     width: 70%;
     align-items: flex-start;
-    color: white;
 }
 
 .info-footer div {
@@ -424,4 +424,10 @@ a{
 
 .footer-brands-list {
     column-count: 2;
+}
+
+.copyright-footer {
+    margin-top: 1%;
+    margin-bottom: 1%
+    background-color: red;
 }
