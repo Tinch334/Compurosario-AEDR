@@ -35,7 +35,7 @@ require 'PHPMailer/src/SMTP.php';
         $mysqli->query("INSERT INTO users(username, email, email_verif_code, password) VALUES('" . $_POST['username'] . "', '" . $_POST['email'] . "', '" . $token . "', '" . $encryptedPass . "')");
 
         //A link taking the user to the verification page.
-        $verificationLink = "<a href='localhost/proyecto_compurosario/Compurosario-AEDR/DB_test/verify-email.php?key=".$_POST['email']."&token=".$token."'>Hace click para verificar tu cuenta</a>";
+        $verificationLink = "<a href='localhost/tests/UserHandling/verify-email.php?key=".$_POST['email']."&token=".$token."'>Hace click para verificar tu cuenta</a>";
           
             
         $mail = new PHPMailer;
