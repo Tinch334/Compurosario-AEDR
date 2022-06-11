@@ -8,10 +8,6 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-    ini_set('display_errors', '1');
-    ini_set('display_startup_errors', '1');
-    error_reporting(E_ALL);
-
     $checkRepUser = $mysqli->query("select * from users where username ='".$_POST['username']."'");
     $checkRepEmail = $mysqli->query("select * from users where email ='".$_POST['email']."'");
 
