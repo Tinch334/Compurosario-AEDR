@@ -127,13 +127,12 @@
                 </div>
                 <span class="modal-close">&times;</span>
             </div>
-                <form method="post" class=login-form>
+            <div>
+                <form method="post" class=login-form id="login-form">
                     <div class="login-username">
-                        
                         <input type="text" id="username" name="username" required=True  placeholder="Usuario">
                     </div>
                     <div class="login-password">
-                        
                         <input type="password" id="password" name="password" required=True  placeholder="Contraseña">
                     </div>
                     <div>
@@ -141,8 +140,15 @@
                     </div>
                 </form>
             </div>
+            <div class="modal-login-errors">
+                <p id="modal-login-user-error">Usuario incorrecto</p>
+                <p id="modal-login-verify-error">Usuario no verificado</p>
+                <p id="modal-login-password-error">Contraseña incorrecta</p>
+            </div>
+            <div class="modal-register-link-div">
+                <p class="modal-register-text">¿No tenes una cuenta? <a href="UserHandling/register.html" class="modal-register-link">Registrate!</a></p>
+            </div>
         </div>
-
     </div>
 
     <div class="carousel-title">

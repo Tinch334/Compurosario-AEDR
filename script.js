@@ -42,6 +42,10 @@ var modalBtn = document.getElementById("login-button");
 // Get the <span> element that closes the modal.
 var spanClose = document.getElementsByClassName("modal-close")[0];
 
+var loginUserError = document.getElementById("modal-login-user-error");
+var loginVerifyError = document.getElementById("modal-login-verify-error");
+var loginPasswordError = document.getElementById("modal-login-password-error");
+
 // When the user clicks on the button, open the modal.
 modalBtn.onclick = function() {
     modal.style.display = "flex";
@@ -59,8 +63,17 @@ window.onclick = function(event) {
   }
 }
 
+function hideErrors() {
+    loginUserError.style.display = "none";
+    loginVerifyError.style.display = "none";
+    loginPasswordError.style.display = "none";
+}
+
 $(document).ready(function() {
-    $('#loginform').submit(function(e) {
+    $('#login-form').submit(function(e) {
+        //Hides all error messages when button is pressed, to avid repeats
+        hideErrors();
+
         e.preventDefault();
         $.ajax({
             type: "POST",
@@ -77,11 +90,20 @@ $(document).ready(function() {
 
                         break;
                     case -1:
+                        loginUserError.style.display = "flex";
+                        console.log("User error");
                         break;
+
                     case -2:
+                        loginVerifyError.style.display = "flex";
+                        console.log("Verify error");
                         break;
+
                     case -3:
+                        loginPasswordError.style.display = "flex";
+                        console.log("Password error");
                         break;
+
                     case 0:
                         alert("Critical error, do not call this file on it's own");
 

@@ -260,6 +260,38 @@ input:focus {outline:none;}
     margin-bottom: 3.5%;
 }
 
+.modal-login-errors {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.modal-login-errors p {
+    display: none;
+    margin: 1%;
+}
+
+.modal-register-link-div {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    background-color: #2a6c98;
+    padding: 1%;
+}
+
+.modal-register-text {
+    margin: 0;
+}
+
+.modal-register-link {
+    text-decoration: underline;
+}
+
+.modal-register-link:hover {
+    color: #F66B0E;
+}
+
+
 /*CAROUSEL*/
 .carousel {
     position: relative;
