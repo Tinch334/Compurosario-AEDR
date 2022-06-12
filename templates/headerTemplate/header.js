@@ -57,13 +57,14 @@ $(document).ready(function() {
         e.preventDefault();
         $.ajax({
             type: "POST",
-            url: "/tests/UserHandling/login.php",
+            url: "/TRES/UserHandling/login.php",
             data: $(this).serialize(), //We pass the form's content to the PHP file
             success: function(response) //We wait for a response
             {
                 console.log(response);
                 var jsonData = JSON.parse(response);
  
+                //We check all possible responses and display the appropriate error message
                 switch (jsonData.success) {
                     case 1:
                         modal.style.display = "none";
@@ -95,7 +96,7 @@ var ajaxInterval = 100;  // 1000 = 1 second, 3000 = 3 seconds
 function doAjax() {
     $.ajax({
             type: "POST",
-            url: "Session/getsession.php",
+            url: "/TRES/Session/getsession.php",
             data: {requested: "logged-in"},
             success: function (data) {
                 //Ajax returns the data as a string
