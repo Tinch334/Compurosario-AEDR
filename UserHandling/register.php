@@ -27,9 +27,6 @@ require 'PHPMailer/src/SMTP.php';
         // formando token unico para el mail
         $token = md5($_POST['email']).rand(10,9999);
 
-        //We add the verification token onto the users entry in the databse
-        $mysqli->query("INSERT INTO users(username, email, email_verif_code, password) VALUES('" . $_POST['username'] . "', '" . $_POST['email'] . "', '" . $token . "', '" . $encryptedPass . "')");
-
         //A link taking the user to the verification page.
         $verificationLink = "<a href='localhost/tests/UserHandling/verify-email.php?key=".$_POST['email']."&token=".$token."'>Hace click para verificar tu cuenta</a>";
           
@@ -63,6 +60,9 @@ require 'PHPMailer/src/SMTP.php';
             exit;
         }
         else {
+            //We add the user if the email was sent
+            $mysqli->query("INSERT INTO users(username, email, email_verif_code, password) VALUES('" . $_POST['username'] . "', '" . $_POST['email'] . "', '" . $token . "', '" . $encryptedPass . "')");
+
             echo 'Message of Send email using Yahoo SMTP server has been sent';
         }
     }

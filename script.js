@@ -42,9 +42,13 @@ var modalBtn = document.getElementById("login-button");
 // Get the <span> element that closes the modal.
 var spanClose = document.getElementsByClassName("modal-close")[0];
 
+//Error buttons
 var loginUserError = document.getElementById("modal-login-user-error");
 var loginVerifyError = document.getElementById("modal-login-verify-error");
 var loginPasswordError = document.getElementById("modal-login-password-error");
+
+var loginButton = document.getElementById("login-button");
+var profileButton = document.getElementById("profile-button");
 
 // When the user clicks on the button, open the modal.
 modalBtn.onclick = function() {
@@ -69,6 +73,12 @@ function hideErrors() {
     loginPasswordError.style.display = "none";
 }
 
+
+//Hide profile button when page loads
+$(document).ready(function() {
+    profileButton.style.display = "none";
+});
+
 $(document).ready(function() {
     $('#login-form').submit(function(e) {
         //Hides all error messages when button is pressed, to avid repeats
@@ -81,27 +91,23 @@ $(document).ready(function() {
             data: $(this).serialize(), //We pass the form's content to the PHP file
             success: function(response) //We wait for a response
             {
-                console.log("Outside");
                 var jsonData = JSON.parse(response);
  
                 switch (jsonData.success) {
                     case 1:
-                        console.log("Logged in!!!!!!!!!!!!!!!");
-
+                        modal.style.display = "none";
                         break;
+
                     case -1:
                         loginUserError.style.display = "flex";
-                        console.log("User error");
                         break;
 
                     case -2:
                         loginVerifyError.style.display = "flex";
-                        console.log("Verify error");
                         break;
 
                     case -3:
                         loginPasswordError.style.display = "flex";
-                        console.log("Password error");
                         break;
 
                     case 0:
@@ -113,3 +119,31 @@ $(document).ready(function() {
        });
      });
 });
+
+var ajaxInterval = 100;  // 1000 = 1 second, 3000 = 3 seconds
+function doAjax() {
+    $.ajax({
+            type: "POST",
+            url: "Session/getsession.php",
+            data: {requested: "logged-in"},
+            success: function (data) {
+                //Ajax returns the data as a string
+                if (data != "null") {
+                    //If user is logged we show the profile button and hide the logout button.
+                    loginButton.style.display = "none";
+                    profileButton.style.display = "block";
+                    console.log("Logged");
+                }
+                else {
+                    console.log("Not");
+                    loginButton.style.display = "block";
+                    profileButton.style.display = "none";
+                }
+            },
+            complete: function (data) {
+                // Schedule the next
+                setTimeout(doAjax, ajaxInterval);
+            }
+    });
+}
+setTimeout(doAjax, ajaxInterval);
