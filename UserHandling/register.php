@@ -8,10 +8,6 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-    ini_set('display_errors', '1');
-    ini_set('display_startup_errors', '1');
-    error_reporting(E_ALL);
-
     $checkRepUser = $mysqli->query("select * from users where username ='".$_POST['username']."'");
     $checkRepEmail = $mysqli->query("select * from users where email ='".$_POST['email']."'");
 
@@ -31,11 +27,8 @@ require 'PHPMailer/src/SMTP.php';
         // formando token unico para el mail
         $token = md5($_POST['email']).rand(10,9999);
 
-        //We add the verification token onto the users entry in the databse
-        $mysqli->query("INSERT INTO users(username, email, email_verif_code, password) VALUES('" . $_POST['username'] . "', '" . $_POST['email'] . "', '" . $token . "', '" . $encryptedPass . "')");
-
         //A link taking the user to the verification page.
-        $verificationLink = "<a href='localhost/proyecto_compurosario/Compurosario-AEDR/DB_test/verify-email.php?key=".$_POST['email']."&token=".$token."'>Hace click para verificar tu cuenta</a>";
+        $verificationLink = "<a href='/UserHandling/verify-email.php?key=".$_POST['email']."&token=".$token."'>Hace click para verificar tu cuenta</a>";
           
             
         $mail = new PHPMailer;
@@ -67,6 +60,9 @@ require 'PHPMailer/src/SMTP.php';
             exit;
         }
         else {
+            //We add the user if the email was sent
+            $mysqli->query("INSERT INTO users(username, email, email_verif_code, password) VALUES('" . $_POST['username'] . "', '" . $_POST['email'] . "', '" . $token . "', '" . $encryptedPass . "')");
+
             echo 'Message of Send email using Yahoo SMTP server has been sent';
         }
     }

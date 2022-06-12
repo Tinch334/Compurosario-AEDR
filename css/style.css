@@ -63,12 +63,30 @@ input:focus {outline:none;}
     filter: invert(1);
 }
 
+.header-button-text {
+    font-size: 100%;
+    font-weight: bold;
+    margin-left: 0.05em;
+    color: white;
+}
+
+.page-interactive button {
+    height: 30px;
+    cursor: pointer;
+    background-color: #F66B0E;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-right: 0.3%;
+}
+
 .cart-button {
+    width: 160px;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    width: 140px;
+    width: 180px;
     height: 30px;
     cursor: pointer;
     background-color: #F66B0E;
@@ -84,12 +102,14 @@ input:focus {outline:none;}
     transform: scaleX(-1);
 }
 
-.cart-button-text {
-    font-size: 90%;
-    font-weight: bold;
-    margin-left: 0.05em;
-    color: white;
+.login-button {
+    width: 100px;
 }
+
+.profile-button {
+    width: 70px;
+}
+
 
 /*NAVBAR*/
 .navbar {
@@ -153,6 +173,132 @@ input:focus {outline:none;}
 }
 
 
+
+
+/*LOGIN MODAL*/
+.login-modal {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.login-modal-content {
+  background-color: #fefefe;
+  margin: 10% auto; /* 15% from the top and centered */
+  width: 25%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.modal-close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-color: #2a6c98;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15px;
+}
+
+.modal-logo-header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: -6%;
+    margin-bottom: -3%;
+}
+
+.img-modal {
+    width: 60px;
+    height: auto;
+    margin-right: 2%;
+}
+
+.modal-text {
+    font-size: 220%;
+    font-weight: bold;
+    color: #ababab;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #FFFEF2;
+}
+
+.login-form div {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-password {
+    margin-bottom: 3.5%;
+}
+
+.modal-login-errors {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.modal-login-errors p {
+    display: none;
+    margin: 1%;
+}
+
+.modal-register-link-div {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    background-color: #2a6c98;
+    padding: 1%;
+}
+
+.modal-register-text {
+    margin: 0;
+}
+
+.modal-register-link {
+    text-decoration: underline;
+}
+
+.modal-register-link:hover {
+    color: #F66B0E;
+}
 
 
 /*CAROUSEL*/

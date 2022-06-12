@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 
-
-
 <head>
     <title>COMPUROSARIO</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -29,7 +27,8 @@
 
     <script type="text/javascript" src="lightslider.js"></script>
 
-    <script src="script.js"></script>
+    <!-- page js -->
+    <script src="script.js" defer></script>
     <!-- slick script cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
     integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
@@ -53,7 +52,15 @@
         
             <button type="button" class="cart-button">
                 <img class="cart-button-image" src="Images/Main page/Shopping cart.svg">
-                <span class="cart-button-text">CARRITO (0)</span>
+                <span class="header-button-text">CARRITO (0)</span>
+            </button>
+
+            <button type="button" id="login-button" class="login-button">
+                <span class="header-button-text">INGRESAR</span>
+            </button>
+
+            <button type="button" id="profile-button" class="profile-button" onclick="location.href='/Profile/index.html';">
+                <span class="header-button-text">PERFIL</span>
             </button>
         </div>
     </header>
@@ -113,6 +120,39 @@
         <a href="#">NOTEBOOKS</a>
         <a href="#">IMPRESORAS</a>
         <a href="#">MONITORES</a>
+    </div>
+
+    <div id="login-modal" class="login-modal">
+        <div class="login-modal-content">
+            <div class="modal-header">
+                <div class="modal-logo-header">
+                    <img class="img-modal" src="Images\Main page\Logo no text.png" alt="logo pagina">
+                    <p class="modal-text">COMPUROSARIO</p>
+                </div>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div>
+                <form method="post" class=login-form id="login-form">
+                    <div class="login-username">
+                        <input type="text" id="username" name="username" required=True  placeholder="Usuario">
+                    </div>
+                    <div class="login-password">
+                        <input type="password" id="password" name="password" required=True  placeholder="Contraseña">
+                    </div>
+                    <div>
+                        <input type="submit" value="Ingresar">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-login-errors">
+                <p id="modal-login-user-error">Usuario incorrecto</p>
+                <p id="modal-login-verify-error">Usuario no verificado</p>
+                <p id="modal-login-password-error">Contraseña incorrecta</p>
+            </div>
+            <div class="modal-register-link-div">
+                <p class="modal-register-text">¿No tenes una cuenta? <a href="UserHandling/register.html" class="modal-register-link">Registrate!</a></p>
+            </div>
+        </div>
     </div>
 
     <div class="carousel-title">
@@ -570,10 +610,6 @@
         </ul>
     </section>
 
-
-
-
-
     <footer class="start-footer">
         <div class="info-footer">
             <div class="footer-info">
@@ -612,6 +648,5 @@
         </div>
                     
     </footer>
-    
 </body>
 </html>
