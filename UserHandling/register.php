@@ -63,7 +63,8 @@ require 'PHPMailer/src/SMTP.php';
             //We add the user if the email was sent
             $mysqli->query("INSERT INTO users(username, email, email_verif_code, password) VALUES('" . $_POST['username'] . "', '" . $_POST['email'] . "', '" . $token . "', '" . $encryptedPass . "')");
 
-            echo 'Message of Send email using Yahoo SMTP server has been sent';
+            //Take user to main page.
+            header("Location: /index.html");
         }
     }
 
