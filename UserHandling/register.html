@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2019.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/register.css">
 
     <!--Page font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,6 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@300&display=swap" rel="stylesheet">
 
     <!-- Jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Templates -->
+    <script src="/tests/components/header.js" type="text/javascript" defer></script>
+    <script src="/tests/components/footer.js" type="text/javascript" defer></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,14 +26,25 @@
     <link rel="icon" type="image/x-icon" href="/TRES/Images/Main page/Favicon.png">
 </head>
 <body>
-	<form action="register.php" method="post">
-        <label for="email">Correo electrónico:</label><br>
-        <input type="email" id="email" name="email" required=True><br>
-		<label for="username">Nombre de usuario:</label><br>
-	    <input type="text" id="username" name="username" required=True><br>
-	    <label for="password">Contraseña:</label><br>
-	    <input type="password" id="password" name="password" required=True>
-		<input type="submit" value="Registrarse">
-	</form>
+    <header-component></header-component>
+
+    <div class="register-div">
+        <div>
+        	<form action="register.php" method="post">
+                <div>
+                    <input type="email" id="email" name="email" required=True placeholder="Correo"><br>
+                    <p id="email-used">Este correo ya esta en uso</p>
+                </div>
+                <div>
+        	       <input type="text" id="username" name="username" required=True placeholder="Usuario"><br>
+                   <p id="username-used">Este nombre de usuario</p>
+                </div>
+        	    <input type="password" id="password" name="password" required=True placeholder="Contraseña">
+        		<input type="submit" value="Registrarse">
+        	</form>
+        </div>
+    </div>
+
+    <footer-component></footer-component>
 </body> 
     
