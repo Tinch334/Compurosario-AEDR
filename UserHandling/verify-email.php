@@ -64,6 +64,6 @@
 
         <p>Tu cuenta ha sido verificada</p>
         <br>
-        <a href="../index.html">Volver a la pagina principal</a>
+        <a href="/index.html">Volver a la pagina principal</a>
     </body>
 </html>

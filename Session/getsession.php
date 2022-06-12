@@ -1,5 +1,5 @@
 <?php
-    //Gets the requested session if it exists.
+    //Gets the requested session, if it exists.
     session_start();
 
     if (isset($_SESSION[$_POST["requested"]])) {

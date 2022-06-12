@@ -28,7 +28,7 @@ require 'PHPMailer/src/SMTP.php';
         $token = md5($_POST['email']).rand(10,9999);
 
         //A link taking the user to the verification page.
-        $verificationLink = "<a href='localhost/tests/UserHandling/verify-email.php?key=".$_POST['email']."&token=".$token."'>Hace click para verificar tu cuenta</a>";
+        $verificationLink = "<a href='/UserHandling/verify-email.php?key=".$_POST['email']."&token=".$token."'>Hace click para verificar tu cuenta</a>";
           
             
         $mail = new PHPMailer;

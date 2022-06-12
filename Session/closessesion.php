@@ -5,5 +5,6 @@
     //We delete all session tokens
     session_destroy();
 
-    header("Location: /tests/index.html");
+    //Take user to main page.
+    header("Location: /index.html");
 ?>
