@@ -110,16 +110,16 @@ body {
 </style>
 
 <header class="page-header" id="page-hd">
-    <img class="img-logo" src="/tests/Images/Main page/Logo.png" alt="logo pagina">
+    <img class="img-logo" src="../Images/Main page/Logo.png" alt="logo pagina">
     
     <div class="page-interactive">
         <div class="search-bar-div">
             <input class="search-bar" type="text" placeholder="Busca un componente">
-            <input type="image" src="Images/Main page/Magnifying glass.svg" class="search-button"/>
+            <input type="image" src="../Images/Main page/Magnifying glass.svg" class="search-button"/>
         </div>
         
         <button type="button" class="cart-button">
-            <img class="cart-button-image" src="Images/Main page/Shopping cart.svg">
+            <img class="cart-button-image" src="../Images/Main page/Shopping cart.svg">
             <span class="header-button-text">CARRITO (0)</span>
         </button>
 

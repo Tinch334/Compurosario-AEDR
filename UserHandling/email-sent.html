@@ -1,24 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>COMPUROSARIO</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/email_style.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2019.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../components/footer.js"></script>
+    <script src="../components/header.js"></script>
 
-    <!--Page font-->
+  <!--Page font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@300&display=swap" rel="stylesheet">
 
-    <!-- Jquery cdn -->>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/x-icon" href="/TRES/Images/Main page/Favicon.png">
+<link rel="icon" type="image/x-icon" href="../Images/Main page/Favicon.png">
+
+    <title>Compurosario</title>
 </head>
 <body>
-    <p>Tu usuario fue confirmado con exito!</p>
-	<a href="/TRES/index.html">Volver a la pagina principal</a>
-</body> 
+    <header-component></header-component>
+    <div class="main-body">
+        <h1>Tu usuario fue confirmado con exito</h1>
+        <br>
+	    <p>Ya puede volver a la <a class="ret-link" href="/TRES/index.html">pagina principal</a> e iniciar sesión.</p>
+        <br><br><br>
+    </div>  
+    <footer-component></footer-component>
+    </footer>
+</body>
+</html>
