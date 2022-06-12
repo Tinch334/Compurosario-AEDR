@@ -1,3 +1,7 @@
+window.onerror = function(error, url, line) {
+    controller.sendLog({acc:'error', data:'ERR:'+error+' URL:'+url+' L:'+line});
+};
+
 /*LOGIN MODAL*/
 // Get the modal.
 var modal = document.getElementById("login-modal");
@@ -57,6 +61,7 @@ $(document).ready(function() {
             data: $(this).serialize(), //We pass the form's content to the PHP file
             success: function(response) //We wait for a response
             {
+                console.log(response);
                 var jsonData = JSON.parse(response);
  
                 switch (jsonData.success) {
@@ -90,7 +95,7 @@ var ajaxInterval = 100;  // 1000 = 1 second, 3000 = 3 seconds
 function doAjax() {
     $.ajax({
             type: "POST",
-            url: "/tests/Session/getsession.php",
+            url: "Session/getsession.php",
             data: {requested: "logged-in"},
             success: function (data) {
                 //Ajax returns the data as a string
