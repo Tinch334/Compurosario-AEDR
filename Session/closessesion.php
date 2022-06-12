@@ -6,5 +6,5 @@
     session_destroy();
 
     //Take user to main page.
-    header("Location: /index.html");
+    header("Location: /TRES/index.html");
 ?>

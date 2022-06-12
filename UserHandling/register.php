@@ -20,7 +20,6 @@ require 'PHPMailer/src/SMTP.php';
         exit;
     }
     else {
-         
         // para verificar el login se usa password_verify($_POST['password'],$encryptedPass)
         $encryptedPass = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
@@ -28,7 +27,7 @@ require 'PHPMailer/src/SMTP.php';
         $token = md5($_POST['email']).rand(10,9999);
 
         //A link taking the user to the verification page.
-        $verificationLink = "<a href='/UserHandling/verify-email.php?key=".$_POST['email']."&token=".$token."'>Hace click para verificar tu cuenta</a>";
+        $verificationLink = "<a href='https://www.agssoft.ar/TRES/UserHandling/verify-email.php?key=".$_POST['email']."&token=".$token."'>Hace click para verificar tu cuenta</a>";
           
             
         $mail = new PHPMailer;
@@ -64,7 +63,7 @@ require 'PHPMailer/src/SMTP.php';
             $mysqli->query("INSERT INTO users(username, email, email_verif_code, password) VALUES('" . $_POST['username'] . "', '" . $_POST['email'] . "', '" . $token . "', '" . $encryptedPass . "')");
 
             //Take user to main page.
-            header("Location: /index.html");
+            header("Location: /TRES/index.html");
         }
     }
 
