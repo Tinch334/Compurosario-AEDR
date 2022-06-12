@@ -4,7 +4,8 @@
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2019.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/register.css">
+
+    <link rel="stylesheet" type="text/css" href="/TRES/UserHandling/register.css">
 
     <!--Page font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,9 +16,11 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <!-- Templates -->
-    <script src="/tests/components/header.js" type="text/javascript" defer></script>
-    <script src="/tests/components/footer.js" type="text/javascript" defer></script>
+    <!-- JS include -->
+    <script src="/TRES/UserHandling/register.js" type="text/javascript" defer></script>
+
+    <!-- Segmente includer -->
+    <script src="/TRES/scripts/csi.js" defer></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,18 +29,18 @@
     <link rel="icon" type="image/x-icon" href="/TRES/Images/Main page/Favicon.png">
 </head>
 <body>
-    <header-component></header-component>
+    <div data-include="/TRES/templates/headerTemplate/header.html"></div>
 
     <div class="register-div">
         <div>
-        	<form action="register.php" method="post">
+        	<form class="register-form" id="register-form" action="register.php" method="post">
                 <div>
-                    <input type="email" id="email" name="email" required=True placeholder="Correo"><br>
+                    <input type="email" id="email" name="email" required=True placeholder="Correo">
                     <p id="email-used">Este correo ya esta en uso</p>
                 </div>
                 <div>
-        	       <input type="text" id="username" name="username" required=True placeholder="Usuario"><br>
-                   <p id="username-used">Este nombre de usuario</p>
+        	       <input type="text" id="username" name="username" required=True placeholder="Usuario">
+                   <p id="username-used">Este nombre de usuario ya esta en uso</p>
                 </div>
         	    <input type="password" id="password" name="password" required=True placeholder="Contraseña">
         		<input type="submit" value="Registrarse">
@@ -45,6 +48,26 @@
         </div>
     </div>
 
-    <footer-component></footer-component>
+    <!--So the footer sits at the bottom of the page. Not elegant at all but it works-->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div data-include="/TRES/templates/footerTemplate/footer.html"></div>
 </body> 
     
