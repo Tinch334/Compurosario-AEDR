@@ -14,6 +14,32 @@ This file verifies a user given a username and password. It can return 5 things:
 
  ## How to host locally
 
-- Change credentials in data.php
 
--
+### 1- Clone the repo (from git bash)
+
+> `git clone https://github.com/Tinch334/Compurosario-AEDR/`
+
+### 2- Change its root dir name
+
+> `mv Compurosario-AEDR/ TRES/`
+
+### 3- Change credentials
+In **data.php**:
+
+> `$db_user='root';`
+> 
+> `$db_pass='root';`
+
+## 4- Change redirect registration URL
+
+In **register.php**
+
+From:
+
+> `$verificationLink = "<a href='https://www.agssoft.ar/TRES/UserHandling/verify-email.php?key=".$_POST['email']."&token=".$token."'>Hace click para verificar tu cuenta</a>";
+`
+
+To:
+
+> `$verificationLink = "<a href='https://www.agssoft.ar/TRES/UserHandling/verify-email.php?key=".$_POST['email']."&token=".$token."'>Hace click para verificar tu cuenta</a>";
+`
