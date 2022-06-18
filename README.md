@@ -11,3 +11,9 @@ This file verifies a user given a username and password. It can return 5 things:
  - **-2** - The account isn't verified
  - **-3** - The password is incorrect
  - **1** - Login successful
+
+ ## How to host locally
+
+- Change credentials in data.php
+
+-

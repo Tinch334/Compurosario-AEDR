@@ -38,15 +38,26 @@
                 $token = $_GET['token'];
 
                 //We check if there's an entry in the database with that email and token.
-                $query = $mysqli->query("SELECT * FROM users WHERE email_verif_code = '" . $token . "' AND email = '" . $email . "'");
+                $getQuery = "SELECT * FROM users WHERE email_verif_code=? AND email=?";
+                $query = $mysqli->prepare($getQuery);
+                $query->bind_param("ss", $token, $email);
+                $query->execute();
 
-                if ($query->num_rows) {
-                    $row = $query->fetch_array(MYSQLI_ASSOC);
 
+                $result = $query->get_result();
+        
+                //echo ("token:". $token);
+                //echo("email:". $email);
+                if ($result->num_rows) {
+                    $row = $result->fetch_assoc();
                     //We check if the account has been verified
                     if ($row["account_verified"] == false) {
                         //Cambiamos el campo "account_verified" de false a true.
-                        $mysqli->query("UPDATE users set account_verified = true WHERE email='" . $email . "'");
+                        $verified = 1;
+                        $updateQuery = "UPDATE users SET account_verified=? WHERE email=?";
+                        $update = $mysqli->prepare($updateQuery);
+                        $update->bind_param("is", $verified, $email);
+                        $update->execute();
 
                         echo "Cuenta verificada con exito!";
                     }
