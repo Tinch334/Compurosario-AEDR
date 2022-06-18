@@ -38,20 +38,19 @@
                 $token = $_GET['token'];
 
                 //We check if there's an entry in the database with that email and token.
-                $getQuery = "SELECT * FROM users WHERE email_verif_code=? AND email=?";
+                $getQuery = "SELECT username,account_verified FROM users WHERE email_verif_code=? AND email=?";
                 $query = $mysqli->prepare($getQuery);
                 $query->bind_param("ss", $token, $email);
                 $query->execute();
-
-
-                $result = $query->get_result();
+                $query->bind_result($usr,$av);
+                $query->fetch();
+                $query->close();
         
                 //echo ("token:". $token);
                 //echo("email:". $email);
-                if ($result->num_rows) {
-                    $row = $result->fetch_assoc();
+                if ($usr) {
                     //We check if the account has been verified
-                    if ($row["account_verified"] == false) {
+                    if ($av == false) {
                         //Cambiamos el campo "account_verified" de false a true.
                         $verified = 1;
                         $updateQuery = "UPDATE users SET account_verified=? WHERE email=?";

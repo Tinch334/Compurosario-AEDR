@@ -8,26 +8,36 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
+
 if (isset($_POST['username']) && $_POST['username'] && isset($_POST['email']) && $_POST['email'] && isset($_POST['password']) && $_POST['password']) {
 
-    $checkRepUserQuery = "SELECT * from users where username=?";
-    $checkRepEmailQuery = "SELECT * from users where email=?";
+    $checkRepUserQuery = "SELECT username from users where username=? LIMIT 1";
+    $checkRepEmailQuery = "SELECT email from users where email=? LIMIT 1";
 
+    
     $checkRepUser = $mysqli->prepare($checkRepUserQuery);
     $checkRepUser->bind_param("s", $_POST['username']);
     $checkRepUser->execute();
-    $resultUser = $checkRepUser->get_result();
+    $checkRepUser->bind_result($resultUser);
+    $checkRepUser->fetch();
+    $checkRepUser->close();
+
 
     $checkRepEmail = $mysqli->prepare($checkRepEmailQuery);
     $checkRepEmail->bind_param("s", $_POST['email']);
     $checkRepEmail->execute();
-    $resultEmail = $checkRepEmail->get_result();
+    $checkRepEmail->bind_result($resultEmail);
+    $checkRepEmail->fetch();
+    $checkRepEmail->close();
 
     //We check to make shure the email or username are not in use
-    if ($resultEmail->num_rows) {
+
+
+    
+    if ($resultEmail) {
         echo json_encode(array('success' => -2));
         echo("repeated mail");
-    } else if ($resultUser->num_rows) {
+    } else if ($resultUser) {
         echo json_encode(array('success' => -1));
         echo("repeated user");
     }
@@ -78,9 +88,7 @@ if (isset($_POST['username']) && $_POST['username'] && isset($_POST['email']) &&
             $insert->bind_param("ssss", $_POST['username'], $_POST['email'], $token, $encryptedPass);
 
             $insert->execute();
-
-            var_dump($insert->get_result()->fetch_assoc());
-
+            $insert->close();
             //The user registration was successful.
             echo json_encode(array('success' => 1));
             echo "registration successful";
