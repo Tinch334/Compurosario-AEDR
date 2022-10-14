@@ -4,17 +4,44 @@ session_start();
 
     //We check that we got the username and password
     if (isset($_POST['username']) && $_POST['username'] && isset($_POST['password']) && $_POST['password']) {
-        $query = $mysqli->query("select * from users where username ='".$_POST['username']."'");
+
+
+        $sqlQuery = "SELECT username,account_verified,password,id from users WHERE username=? LIMIT 1";
+        $query = $mysqli->prepare($sqlQuery);
+        $query->bind_param("s", $_POST['username']);
+        $query->execute();
+        
         $encryptedPass = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-        if ($query->num_rows) {
-            $row = $query->fetch_array(MYSQLI_ASSOC);
+        //$result = $query->get_result();
+        $query->bind_result($user,$av,$p,$id);
+        $query->fetch();
+        $query->close();
 
-            if ($row["account_verified"] == true) {
-                if (password_verify($_POST['password'], $row["password"])) {
+        var_dump($a);
+        var_dump($b);
+        var_dump($c);
+        var_dump($d);
+
+        if ($user) {
+            //$row = $result->fetch_assoc();
+
+            if ($av == true) {
+                
+                if (password_verify($_POST['password'], $p)) {
                     //We update the last time the user logged in.
                     $date = date("Y-m-d H:i:s");
-                    $mysqli->query("UPDATE users set last_log = '" . $date . "' WHERE username= '" . $_POST['username'] . "'");
+
+                    //ll $date
+                    //usr $_POST['username']
+
+                    $sqlUpdate = "UPDATE users SET last_log=? WHERE username=?";
+                    $update = $mysqli->prepare($sqlUpdate);
+
+                    $update->bind_param("ss", $date, $_POST['username']);
+
+                    $update->execute();
+                    $update->close();
 
                     //NOT WORKING
                     //Cookies do not work in any of the computers of the members of the group.
@@ -22,7 +49,7 @@ session_start();
                     //setcookie("userLogged", "pito de mono" , time()+60*60*24*30, "/", 1);
 
                     //Using sessions until issue is resolved.
-                    $_SESSION["logged-in"] = $row["id"];
+                    $_SESSION["logged-in"] = $id;
 
                     echo json_encode(array('success' => 1)); //Successful verification.   
                 }
@@ -41,4 +68,5 @@ session_start();
     else {
         echo json_encode(array('success' => 0));
     }
+$mysqli->close();
 ?>

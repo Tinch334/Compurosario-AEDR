@@ -32,6 +32,10 @@ $(document).ready(function() {
                 switch (jsonData.success) {
                     case 1:
                         //Take user to main page, registration was successful.
+                         if($(this).hasClass('disabled')) {
+                            window.location.replace("");
+                        } 
+                        $(this).prop('disabled', true);
                         window.location.replace("/TRES/index.html");
                         break;
 
@@ -45,7 +49,6 @@ $(document).ready(function() {
 
                     case 0:
                         alert("Critical error, do not call this file on it's own");
-
                         break;
                 }
            }

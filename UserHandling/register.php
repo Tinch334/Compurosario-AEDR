@@ -8,19 +8,41 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
+
 if (isset($_POST['username']) && $_POST['username'] && isset($_POST['email']) && $_POST['email'] && isset($_POST['password']) && $_POST['password']) {
 
-    $checkRepUser = $mysqli->query("select * from users where username ='".$_POST['username']."'");
-    $checkRepEmail = $mysqli->query("select * from users where email ='".$_POST['email']."'");
+    $checkRepUserQuery = "SELECT username from users where username=? LIMIT 1";
+    $checkRepEmailQuery = "SELECT email from users where email=? LIMIT 1";
+
+    
+    $checkRepUser = $mysqli->prepare($checkRepUserQuery);
+    $checkRepUser->bind_param("s", $_POST['username']);
+    $checkRepUser->execute();
+    $checkRepUser->bind_result($resultUser);
+    $checkRepUser->fetch();
+    $checkRepUser->close();
+
+
+    $checkRepEmail = $mysqli->prepare($checkRepEmailQuery);
+    $checkRepEmail->bind_param("s", $_POST['email']);
+    $checkRepEmail->execute();
+    $checkRepEmail->bind_result($resultEmail);
+    $checkRepEmail->fetch();
+    $checkRepEmail->close();
 
     //We check to make shure the email or username are not in use
-    if ($checkRepEmail->num_rows) {
-        echo json_encode(array('success' => -2));
 
-    } else if ($checkRepUser->num_rows) {
+
+    
+    if ($resultEmail) {
+        echo json_encode(array('success' => -2));
+        echo("repeated mail");
+    } else if ($resultUser) {
         echo json_encode(array('success' => -1));
+        echo("repeated user");
     }
     else {
+        echo("new user");
         // para verificar el login se usa password_verify($_POST['password'],$encryptedPass)
         $encryptedPass = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
@@ -29,7 +51,6 @@ if (isset($_POST['username']) && $_POST['username'] && isset($_POST['email']) &&
 
         //A link taking the user to the verification page.
         $verificationLink = "<a href='https://www.agssoft.ar/TRES/UserHandling/verify-email.php?key=".$_POST['email']."&token=".$token."'>Hace click para verificar tu cuenta</a>";
-          
             
         $mail = new PHPMailer;
  
@@ -60,61 +81,20 @@ if (isset($_POST['username']) && $_POST['username'] && isset($_POST['email']) &&
             exit;
         }
         else {
-            //We add the user if the email was sent
-            $mysqli->query("INSERT INTO users(username, email, email_verif_code, password) VALUES('" . $_POST['username'] . "', '" . $_POST['email'] . "', '" . $token . "', '" . $encryptedPass . "')");
 
+            //We add the user if the email was sent
+            $addUserQuery = "INSERT INTO users(username, email, email_verif_code, password) VALUES (?,?,?,?)";
+            $insert = $mysqli->prepare($addUserQuery);
+            $insert->bind_param("ssss", $_POST['username'], $_POST['email'], $token, $encryptedPass);
+
+            $insert->execute();
+            $insert->close();
             //The user registration was successful.
             echo json_encode(array('success' => 1));
+            echo "registration successful";
         }
     }
 }
-
 $mysqli->close();
 ?>
 
-
-
-<?php
-/*include "data.php";
-session_start();
-
-    //We check that we got the username and password
-    if (isset($_POST['username']) && $_POST['username'] && isset($_POST['password']) && $_POST['password']) {
-        $query = $mysqli->query("select * from users where username ='".$_POST['username']."'");
-        $encryptedPass = password_hash($_POST['password'], PASSWORD_BCRYPT);
-
-        if ($query->num_rows) {
-            $row = $query->fetch_array(MYSQLI_ASSOC);
-
-            if ($row["account_verified"] == true) {
-                if (password_verify($_POST['password'], $row["password"])) {
-                    //We update the last time the user logged in.
-                    $date = date("Y-m-d H:i:s");
-                    $mysqli->query("UPDATE users set last_log = '" . $date . "' WHERE username= '" . $_POST['username'] . "'");
-
-                    //NOT WORKING
-                    //Cookies do not work in any of the computers of the members of the group.
-                    //We create a cookie that will expire in 30 days and grants the user access to all the files.
-                    //setcookie("userLogged", "pito de mono" , time()+60*60*24*30, "/", 1);
-
-                    //Using sessions until issue is resolved.
-                    $_SESSION["logged-in"] = $row["id"];
-
-                    echo json_encode(array('success' => 1)); //Successful verification.   
-                }
-                else {
-                    echo json_encode(array('success' => -3));
-                }
-            }
-            else {
-                echo json_encode(array('success' => -2));
-            }
-        }
-        else {
-            echo json_encode(array('success' => -1));
-        }    
-    }
-    else {
-        echo json_encode(array('success' => 0));
-    }
-?>*/
