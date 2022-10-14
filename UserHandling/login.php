@@ -14,14 +14,9 @@ session_start();
         $encryptedPass = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
         //$result = $query->get_result();
-        $query->bind_result($user,$av,$p,$id);
+        $query->bind_result($user, $av, $p, $id);
         $query->fetch();
         $query->close();
-
-        var_dump($a);
-        var_dump($b);
-        var_dump($c);
-        var_dump($d);
 
         if ($user) {
             //$row = $result->fetch_assoc();
