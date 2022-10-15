@@ -42,7 +42,6 @@ if (isset($_POST['username']) && $_POST['username'] && isset($_POST['email']) &&
         echo("repeated user");
     }
     else {
-        echo("new user");
         // para verificar el login se usa password_verify($_POST['password'],$encryptedPass)
         $encryptedPass = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
@@ -60,7 +59,7 @@ if (isset($_POST['username']) && $_POST['username'] && isset($_POST['email']) &&
         // port for Send email
         $mail->Port = 465;
         $mail->SMTPSecure = 'ssl';
-        $mail->SMTPDebug = 1;
+        $mail->SMTPDebug = 0;
         $mail->SMTPAuth = true;
         $mail->Username = 'compurosario.noreply@Yahoo.com';
         $mail->Password = 'gpzrqhbygsudxyxm';
@@ -91,7 +90,6 @@ if (isset($_POST['username']) && $_POST['username'] && isset($_POST['email']) &&
             $insert->close();
             //The user registration was successful.
             echo json_encode(array('success' => 1));
-            echo "registration successful";
         }
     }
 }

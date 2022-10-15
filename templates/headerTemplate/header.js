@@ -16,6 +16,7 @@ var spanClose = document.getElementsByClassName("modal-close")[0];
 var loginUserError = document.getElementById("modal-login-user-error");
 var loginVerifyError = document.getElementById("modal-login-verify-error");
 var loginPasswordError = document.getElementById("modal-login-password-error");
+var loginBlockedError = document.getElementById("modal-login-blocked-error");
 
 var loginButton = document.getElementById("login-button");
 var profileButton = document.getElementById("profile-button");
@@ -41,6 +42,7 @@ function hideErrors() {
     loginUserError.style.display = "none";
     loginVerifyError.style.display = "none";
     loginPasswordError.style.display = "none";
+    loginBlockedError.style.display = "none";
 }
 
 
@@ -80,6 +82,10 @@ $(document).ready(function() {
 
                     case -3:
                         loginPasswordError.style.display = "flex";
+                        break;
+
+                    case -4:
+                        loginBlockedError.style.display = "flex";
                         break;
 
                     case 0:
