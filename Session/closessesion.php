@@ -4,7 +4,4 @@
 
     //We delete all session tokens
     session_destroy();
-
-    //Take user to main page.
-    header("Location: /TRES/index.html");
 ?>

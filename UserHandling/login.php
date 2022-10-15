@@ -4,8 +4,6 @@ session_start();
 
     //We check that we got the username and password
     if (isset($_POST['username']) && $_POST['username'] && isset($_POST['password']) && $_POST['password']) {
-
-
         $sqlQuery = "SELECT username,account_verified,password,id from users WHERE username=? LIMIT 1";
         $query = $mysqli->prepare($sqlQuery);
         $query->bind_param("s", $_POST['username']);
@@ -19,10 +17,7 @@ session_start();
         $query->close();
 
         if ($user) {
-            //$row = $result->fetch_assoc();
-
             if ($av == true) {
-                
                 if (password_verify($_POST['password'], $p)) {
                     //We update the last time the user logged in.
                     $date = date("Y-m-d H:i:s");

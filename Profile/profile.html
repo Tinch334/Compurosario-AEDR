@@ -14,17 +14,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@300&display=swap" rel="stylesheet">
 
     <!-- Jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- page js -->
+    <script src="/TRES/Profile/profile.js" defer></script>
+
     <link rel="icon" type="image/x-icon" href="/TRES/Images/Main page/Favicon.png">
 </head>
 <body>
-    <form action="/TRES/Session/closessesion.php" method="post">
-        <input type="submit" name="logout"
-                class="button" value="Cerrar sesion" />
+    <div class = "info-list">
+        <div id="user-info"></div>
+        <div id="email-info"></div>
+        <div>Cambiar contraseña</div>
+    </div>
+
+    <form method="post" id="logout-form">
+        <input type="submit" name="logout" class="button" value="Cerrar sesion"/>
     </form>
 </body>
 </html>
