@@ -54,7 +54,7 @@ session_start();
             '<form action="manage_user.php" method="post">
             <input placeholder="Ingresar motivo de bloqueo" type="text" id="reason" name="reason" required="true">
             <input type="hidden" name="todo" value=block>
-            <input type="hidden" name="foo" value='.htmlentities($row["username"]).'>
+            <input type="hidden" name="email" value='.htmlentities($row["email"]).'>
             <input type="submit" value="Bloquear">
             </form>'
             );
@@ -100,7 +100,7 @@ session_start();
             echo(
             '<form action="manage_user.php" method="post">
             <input type="hidden" name="todo" value=unblock>
-            <input type="hidden" name="foo" value='.htmlentities($row["username"]).'>
+            <input type="hidden" name="email" value='.htmlentities($row["email"]).'>
             <input type="submit" value="Desbloquear">
             </form>'
             );
