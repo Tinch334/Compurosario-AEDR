@@ -1,5 +1,10 @@
 <?php
 include "data.php";
+session_start();
+
+$errMessage = "Credenciales inválidas.";
+
+
 if (!empty($_POST['username']) && !empty($_POST['password'])) {
  
     $username = $_POST['username'];
@@ -10,21 +15,23 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
     
     $stmt->bind_param("s", $username);
     $stmt->execute();
-    
-   // $result = $stmt->get_result();
 
     $stmt->bind_result($usr,$pw);
 
-    while($stmt->fetch()){
-        if (password_verify($password,$pw)) {
-            header("Location: admin.html");
+    while($stmt->fetch()) {
+        if (!strcmp($usr, $username) && password_verify($password,$pw)) {
+            $_SESSION["loggedIn"] = true;
+            header("Location: admin.php");
             die();
         }
-        else 
-            echo "Try again.";
+        else {
+            $_SESSION["error"] = $errMessage;
+            header("Location: index.php");
             die();
+        }
     }
-    echo "Try again.";
+    $_SESSION["error"] = $errMessage;
+    header("Location: index.php");
     die();
 }
 

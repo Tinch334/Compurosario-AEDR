@@ -30,7 +30,7 @@ if (isset($_POST['username']) && $_POST['username'] && isset($_POST['email']) &&
     $checkRepEmail->fetch();
     $checkRepEmail->close();
 
-    //We check to make shure the email or username are not in use
+    //We check to make sure the email or username are not in use
 
 
     
