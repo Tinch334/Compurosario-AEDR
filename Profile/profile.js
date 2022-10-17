@@ -2,7 +2,7 @@ window.onerror = function(error, url, line) {
     controller.sendLog({acc:'error', data:'ERR:'+error+' URL:'+url+' L:'+line});
 };
 
-var ajaxInterval = 100;  // 1000 = 1 second, 3000 = 3 seconds
+var ajaxInterval = 100;
 $(document).ready(function() {
     function doAjax() {
         $.ajax({
@@ -10,10 +10,10 @@ $(document).ready(function() {
                 url: "/TRES/Session/getsession.php",
                 data: {requested: "logged-in"},
                 success: function (data) {
-                    //Ajax returns the data as a string. We do this check to prevent people from accessing the page by simply typing in the URL.
+                    //We do this check to prevent people from accessing the page by simply typing in the URL.
                     if (data == "null") {
                         //We redirect the user to the main page.
-                        window.location.replace("http://localhost/TRES/index.html");;
+                        window.location.replace("/TRES/index.html");;
                     }
                 },
                 complete: function (data) {
@@ -49,8 +49,6 @@ $(document).ready(function() {
             data: {requested: "logged-in"},
             success: function (data) {
                 var jsonData = JSON.parse(data);
-                var userInfo = document.getElementsByClassName("user-info");
-                var emailInfo = document.getElementsByClassName("email-info");
                 
                 $('#user-info').text("Usuario: " + jsonData.username);
                 $('#email-info').text("Correo electronico: " + jsonData.email);
