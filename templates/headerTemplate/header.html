@@ -39,30 +39,35 @@
 </head>
 <body>
     <header class="page-header" id="page-hd">
-        <p>
-            <a href = "/TRES/index.html">
-            <img class="img-logo" src="/TRES/Images/Main page/Logo.png" alt="logo pagina">
-            </a>
-        </p>
-        
-        <div class="page-interactive">
-            <div class="search-bar-div">
-                <input class="search-bar" type="text" placeholder="¿Qué estás buscando?">
-                <input type="image" src="/TRES/Images/Main page/Magnifying glass.svg" class="search-button"/>
+        <div class="header">
+            <a href="/TRES/index.html"><img class="img-logo" src="/TRES/Images/Main page/Logo.png" alt="logo pagina"></a>
+            <div class="both-div">
+                <div class="ad-social">
+                    <img class="ad" src="/TRES/Images/Main page/ad.png" alt="Publicidad">
+                    <img class="facebookImage" src="/TRES/Images/Main page/Facebook Icon.png" alt="Nuestro facebook">
+                    <img class="instagramImage" src="/TRES/Images/Main page/Instagram Icon.png" alt="Nuestro instagram">
+                    <img class="mailImage" src="/TRES/Images/Main page/Mail Icon.png" alt="Nuestro mail">
+                </div>
+                <div class="page-interactive">
+                    <div class="search-bar-div">
+                        <input class="search-bar" type="text" placeholder="¿Qué estás buscando?">
+                        <input type="image" src="/TRES/Images/Main page/Magnifying glass.svg" class="search-button"/>
+                    </div>
+                    
+                    <button type="button" class="cart-button">
+                        <img class="cart-button-image" src="/TRES/Images/Main page/Shopping cart.svg">
+                        <span class="header-button-text">CARRITO (0)</span>
+                    </button>
+
+                    <button type="button" id="login-button" class="login-button">
+                        <span class="header-button-text">Ingresar</span>
+                    </button>
+
+                    <button type="button" id="profile-button" class="profile-button" onclick="location.href='/TRES/Profile/profile.html';">
+                        <span class="header-button-text">PERFIL</span>
+                    </button>
+                </div>
             </div>
-            
-            <button type="button" class="cart-button">
-                <img class="cart-button-image" src="/TRES/Images/Main page/Shopping cart.svg">
-                <span class="header-button-text">CARRITO (0)</span>
-            </button>
-
-            <button type="button" id="login-button" class="login-button">
-                <span class="header-button-text">Ingresar</span>
-            </button>
-
-            <button type="button" id="profile-button" class="profile-button" onclick="location.href='/TRES/Profile/profile.html';">
-                <span class="header-button-text">PERFIL</span>
-            </button>
         </div>
     </header>
 
@@ -70,7 +75,7 @@
         <div class="login-modal-content">
             <div class="modal-header">
                 <div class="modal-logo-header">
-                    <img class="img-modal" src="/TRES/Images/Main page/Logo no text.png" alt="logo pagina">
+                    <img class="img-modal" src="Images\Main page\Logo no text.png" alt="logo pagina">
                     <p class="modal-text">COMPUROSARIO</p>
                 </div>
                 <span class="modal-close">&times;</span>
@@ -84,7 +89,7 @@
                         <input type="password" id="password" name="password" required=True  placeholder="Contraseña">
                     </div>
                     <div>
-                        <input type="submit" value="Ingresar">
+                        <input class="modal-login-button" type="submit" value="Ingresar">
                     </div>
                 </form>
             </div>
