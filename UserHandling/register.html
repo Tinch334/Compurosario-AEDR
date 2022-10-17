@@ -30,8 +30,9 @@
 </head>
 <body>
     <div data-include="/TRES/templates/headerTemplate/header.html"></div>
-
+    
     <div class="register-div">
+        <h1 class ="welcome">Hola! Registrate así te llenamos de spam</h1>
         <div>
         	<form class="register-form" id="register-form" action="register.php" method="post">
                 <div>
@@ -43,31 +44,12 @@
                    <p id="username-used">Este nombre de usuario ya esta en uso</p>
                 </div>
         	    <input type="password" id="password" name="password" required=True placeholder="Contraseña">
-        		<input type="submit" value="Registrarse">
+        		<input class="registerButton" type="submit" value="Registrarse">
         	</form>
         </div>
     </div>
 
-    <!--So the footer sits at the bottom of the page. Not elegant at all but it works-->
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 
-    <div data-include="/TRES/templates/footerTemplate/footer.html"></div>
+    <div class="footer" data-include="/TRES/templates/footerTemplate/footer.html"></div>
 </body> 
     
