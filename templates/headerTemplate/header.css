@@ -161,7 +161,6 @@ body {
 
 /* Modal Content/Box */
 .login-modal-content {
-  background-color: #fefefe;
   margin: 10% auto; /* 15% from the top and centered */
   width: 25%; /* Could be more or less, depending on screen size */
 }
@@ -190,6 +189,7 @@ body {
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 15px;
+    border-radius: 4px 4px 0 0;
 }
 
 .modal-logo-header {
@@ -252,6 +252,7 @@ body {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
+    background-color: white;
 }
 
 .modal-login-errors p {
@@ -265,10 +266,12 @@ body {
     justify-content: center;
     background-color: #2a6c98;
     padding: 1%;
+    border-radius: 0 0 4px 4px;
 }
 
 .modal-register-text {
     margin: 0;
+    color: white;
 }
 
 .modal-register-link {
