@@ -1,5 +1,5 @@
 <?php 
-include "data.php";
+include $_SERVER['DOCUMENT_ROOT']."/TRES/auth/data.php";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 

@@ -1,15 +1,13 @@
 <?php
-include "data.php";
+include $_SERVER['DOCUMENT_ROOT']."/TRES/auth/data.php";
 session_start();
 
     //We check that we got the username and password
-    if (isset($_POST['username']) && $_POST['username'] && isset($_POST['password']) && $_POST['password']) {
+    if (isset($_POST['username']) && $_POST['password']) {
         $sqlQuery = "SELECT username, account_verified, password, id, is_blocked from users WHERE username=? LIMIT 1";
         $query = $mysqli->prepare($sqlQuery);
         $query->bind_param("s", $_POST['username']);
         $query->execute();
-        
-        $encryptedPass = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
         //$result = $query->get_result();
         $query->bind_result($user, $av, $p, $id, $ib);

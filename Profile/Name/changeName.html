@@ -25,11 +25,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- page js -->
+    <script src="/TRES/Profile/Name/changeName.js" defer></script>
     
 
     <link rel="icon" type="image/x-icon" href="/TRES/Images/Main page/Favicon.png">
 </head>
 <body>
-    
+    <form method="post" class="new-name-form" id="new-name-form">
+        <div>
+            <input type="text" id="new-username" name="new-username" required=True  placeholder="Ingresa tu nuevo usuario">
+        </div>
+        <div>
+            <input class="new-name-button" type="submit" value="Cambiar">
+        </div>
+    </form>
 </body>
 </html>
