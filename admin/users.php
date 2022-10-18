@@ -70,48 +70,42 @@ session_start();
     
         $stmt2 = $mysqli->query("SELECT username, email, account_verified, num_of_logs, last_log from users where is_blocked=1");
 
-        if ($stmt2->fetch_assoc() == NULL) {
+        if (($stmt2->num_rows) == 0) {
             echo "<p>Actualmente no hay usuarios bloqueados</p>";
-        }
-
-        else {
-
+        } else {
             echo("<td><b>Nombre de usuario</b></td>");
             echo("<td><b>Correo electrónico</b</td>");
             echo("<td><b>Cuenta verificada</b</td>");
             echo("<td><b>Numero de inicios de sesion</b</td>");
             echo("<td><b>Ultimo inicio de sesión</b</td>");
             echo("<td><b>Administrar usuario</b</td>");
-        }
         
-
-        while ( $row = $stmt2->fetch_assoc() ) {
-            echo "<tr><td>";
-            echo(htmlentities($row['username']));
-            echo "</td><td>";
-            echo(htmlentities($row['email']));
-            echo "</td><td>";
-            echo(htmlentities($row['account_verified'])? "Sí" : "No");
-            echo "</td><td>";
-            echo(htmlentities($row['num_of_logs']));
-            echo "</td><td>";
-            echo(htmlentities($row['last_log'])? htmlentities($row['last_log']) : "Sin registro");
-            echo "</td><td>";
-            echo(
-            '<form action="manage_user.php" method="post">
-            <input type="hidden" name="todo" value=unblock>
-            <input type="hidden" name="email" value='.htmlentities($row["email"]).'>
-            <input type="submit" value="Desbloquear">
-            </form>'
-            );
-            echo("\n"."</td></tr>"."\n");
-        }
+            while ( $row = $stmt2->fetch_assoc() ) {
+                echo "<tr><td>";
+                echo(htmlentities($row['username']));
+                echo "</td><td>";
+                echo(htmlentities($row['email']));
+                echo "</td><td>";
+                echo(htmlentities($row['account_verified'])? "Sí" : "No");
+                echo "</td><td>";
+                echo(htmlentities($row['num_of_logs']));
+                echo "</td><td>";
+                echo(htmlentities($row['last_log'])? htmlentities($row['last_log']) : "Sin registro");
+                echo "</td><td>";
+                echo(
+                '<form action="manage_user.php" method="post">
+                <input type="hidden" name="todo" value=unblock>
+                <input type="hidden" name="email" value='.htmlentities($row["email"]).'>
+                <input type="submit" value="Desbloquear">
+                </form>'
+                );
+                echo("\n"."</td></tr>"."\n");
+                }   
+            }
     ?>
     </table>
 
-
 <a href='admin.php'>Volver</a>
-
 
 
 </body>
