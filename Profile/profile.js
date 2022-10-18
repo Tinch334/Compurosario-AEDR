@@ -13,11 +13,11 @@ $(document).ready(function() {
                     //We do this check to prevent people from accessing the page by simply typing in the URL.
                     if (data == "null") {
                         //We redirect the user to the main page.
-                        window.location.replace("/TRES/index.html");;
+                        window.location.replace("/TRES/index.html");
                     }
                 },
                 complete: function (data) {
-                    // Schedule the next
+                    // Schedule the next call.
                     setTimeout(doAjax, ajaxInterval);
                 }
         });
@@ -33,7 +33,7 @@ $(document).ready(function() {
         $.ajax({
             type: "POST",
             url: "/TRES/Session/closessesion.php",
-            success: function(response) //We wait for a response
+            success: function(data)
             {
                 console.log("Close session");
             }

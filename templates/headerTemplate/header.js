@@ -55,7 +55,6 @@ $(document).ready(function() {
     $('#login-form').submit(function(e) {
         //Hides all error messages when button is pressed, to avid repeats
         hideErrors();
-
         e.preventDefault();
         $.ajax({
             type: "POST",

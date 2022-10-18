@@ -31,7 +31,7 @@
     </head>
     <body>
         <?php
-            include "data.php";
+            include $_SERVER['DOCUMENT_ROOT']."/TRES/auth/data.php";
 
             if($_GET['key'] && $_GET['token']) {
                 $email = $_GET['key'];

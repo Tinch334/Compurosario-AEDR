@@ -1,5 +1,5 @@
 <?php
-include "data.php";
+include $_SERVER['DOCUMENT_ROOT']."/TRES/auth/data.php";
 session_start();
 
     //We check that we got the username and password
