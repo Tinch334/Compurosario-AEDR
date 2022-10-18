@@ -4,7 +4,7 @@
 
     $sqlQuery = "SELECT username, email from users WHERE id=? LIMIT 1";
     $query = $mysqli->prepare($sqlQuery);
-    $query->bind_param("s", $_SESSION[$_POST["requested"]]);
+    $query->bind_param("s", $_SESSION["logged-in"]);
     $query->execute();
     
     $query->bind_result($username, $email);

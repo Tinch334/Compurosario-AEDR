@@ -7,8 +7,7 @@ $(document).ready(function() {
             data: $(this).serialize(),
             success: function(data)
             {
-                console.log(data);
-                //window.location.replace("/TRES/Profile/profile.html");
+                window.location.replace("/TRES/Profile/profile.html");
             }
        });
     });

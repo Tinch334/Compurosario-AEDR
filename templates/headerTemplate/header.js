@@ -2,94 +2,73 @@ window.onerror = function(error, url, line) {
     controller.sendLog({acc:'error', data:'ERR:'+error+' URL:'+url+' L:'+line});
 };
 
-/*LOGIN MODAL*/
-// Get the modal.
-var modal = document.getElementById("login-modal");
-
+/*LOGIN modal*/
 // Get the button that opens the modal.
-var modalBtn = document.getElementById("login-button");
+var loginButton = document.getElementById("login-button");
 
 // Get the <span> element that closes the modal.
 var spanClose = document.getElementsByClassName("modal-close")[0];
 
-//Error buttons
-var loginUserError = document.getElementById("modal-login-user-error");
-var loginVerifyError = document.getElementById("modal-login-verify-error");
-var loginPasswordError = document.getElementById("modal-login-password-error");
-var loginBlockedError = document.getElementById("modal-login-blocked-error");
-
-var loginButton = document.getElementById("login-button");
-var profileButton = document.getElementById("profile-button");
-
 // When the user clicks on the button, open the modal.
-modalBtn.onclick = function() {
-    modal.style.display = "flex";
+loginButton.onclick = function() {
+    $("#login-modal").show()
 }
 
 // When the user clicks on <span> (x), close the modal.
 spanClose.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it.
-window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-  }
+    $("#login-modal").hide();
 }
 
 function hideErrors() {
-    loginUserError.style.display = "none";
-    loginVerifyError.style.display = "none";
-    loginPasswordError.style.display = "none";
-    loginBlockedError.style.display = "none";
+    $("#modal-login-user-error").hide();
+    $("#modal-login-verify-error").hide();
+    $("#modal-login-password-error").hide();
+    $("#modal-login-elocked-error").hide();
 }
 
 
 //Hide profile button when page loads
 $(document).ready(function() {
-    profileButton.style.display = "none";
+    $("#profile-button").hide();
 });
 
 $(document).ready(function() {
     $('#login-form').submit(function(e) {
-        //Hides all error messages when button is pressed, to avid repeats
+        //Hides all error messages when button is pressed, to avid repeats.
         hideErrors();
         e.preventDefault();
         $.ajax({
             type: "POST",
             url: "/TRES/UserHandling/login.php",
-            data: $(this).serialize(), //We pass the form's content to the PHP file
-            success: function(response) //We wait for a response
+            data: $(this).serialize(), //We pass the form's content to the PHP file.
+            success: function(data) //We wait for a response.
             {
-                console.log(response);
-                var jsonData = JSON.parse(response);
+                var jsonData = JSON.parse(data);
  
-                //We check all possible responses and display the appropriate error message
+                //We check all possible responses and display the appropriate error message.
                 switch (jsonData.success) {
                     case 1:
-                        modal.style.display = "none";
+                        $("#login-modal").hide();
                         break;
 
                     case -1:
-                        loginUserError.style.display = "flex";
+                        $("#modal-login-user-error").show();
                         break;
 
                     case -2:
-                        loginVerifyError.style.display = "flex";
+                        $("#modal-login-verify-error").show();
                         break;
 
                     case -3:
-                        loginPasswordError.style.display = "flex";
+                        $("#modal-login-password-error").show();
                         break;
 
                     case -4:
-                        loginBlockedError.style.display = "flex";
+                        $("#modal-login-blocked-error").show();
                         break;
 
                     case 0:
                         alert("Critical error, do not call this file on it's own");
-
                         break;
                 }
            }
@@ -97,7 +76,7 @@ $(document).ready(function() {
      });
 });
 
-var ajaxInterval = 100;  // 1000 = 1 second, 3000 = 3 seconds
+var ajaxInterval = 100;
 function doAjax() {
     $.ajax({
             type: "POST",
@@ -107,18 +86,19 @@ function doAjax() {
                 //Ajax returns the data as a string
                 if (data != "null") {
                     //If user is logged we show the profile button and hide the logout button.
-                    loginButton.style.display = "none";
-                    profileButton.style.display = "block";
+                    $("#login-button").hide();
+                    $("#profile-button").show();
                     console.log("Logged");
                 }
                 else {
+                    $("#login-button").show();
+                    $("#profile-button").hide();
+
                     console.log("Not");
-                    loginButton.style.display = "block";
-                    profileButton.style.display = "none";
                 }
             },
             complete: function (data) {
-                // Schedule the next
+                // Schedule the next call.
                 setTimeout(doAjax, ajaxInterval);
             }
     });

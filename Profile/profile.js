@@ -28,7 +28,6 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $('#logout-form').submit(function(e) {
-
         e.preventDefault();
         $.ajax({
             type: "POST",
