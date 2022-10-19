@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link rel="stylesheet" type="text/css" href="/TRES/Profile/changes.css">
     <!--Page font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,15 +31,18 @@
     <link rel="icon" type="image/x-icon" href="/TRES/Images/Main page/Favicon.png">
 </head>
 <body>
-    <form method="post" class="new-email-form" id="new-email-form">
-        <div>
-            <input type="text" id="new-email" name="new-email" required=True  placeholder="Ingresa tu nuevo email">
-            <p class="email-existing-error">El correo ingresado ya esta en uso<p>
-            <p class="email-rejected-error">El correo ingresado no es valido<p>
-        </div>
-        <div>
-            <input class="new-email-button" type="submit" value="Cambiar">
-        </div>
-    </form>
+    <div class="center">
+        <h1>Cambio de mail</h1>
+        <form method="post" class="new-email-form" id="new-email-form">
+            <div>
+                <input type="text" id="new-email" name="new-email" required=True  placeholder="Ingresa tu nuevo email">
+                <p class="email-existing-error">El correo ingresado ya esta en uso<p>
+                <p class="email-rejected-error">El correo ingresado no es valido<p>
+            </div>
+            <div>
+                <input class="new-email-button" type="submit" value="Cambiar">
+            </div>
+        </form>
+    </div>
 </body>
 </html>
