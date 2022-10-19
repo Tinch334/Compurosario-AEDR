@@ -4,18 +4,79 @@ body {
     font-family: 'Poppins';
     height: 100vh;
     overflow: hidden;
-    background-color: #205375;
+    background-color: #EFEFEF;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.info-list {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 50px;
+body h1{
+    font-style: italic;
+}
+.main-container{
+    margin-top: 10%;
+}
+.second-container{
     background: white;
-    border-radius: 6px;
-    width: 550px;
-    box-shadow: 0px 0px 10px;
-
+    border-radius: 10px;
+    width: 700px;
+    box-shadow: 0px 0px 2px;
+    padding: 5%;
 }
+
+
+.info-list{
+    font-size: 23px;
+}
+
+.user-info{
+    margin-bottom: 4%;
+    cursor: pointer;
+}
+
+.email-info{
+    margin-bottom: 4%;
+    cursor: pointer;
+}
+
+.change-pass{
+    background-color: #1A73E9;
+    width: 270px;
+    color: white;
+    text-align: center;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+.buttons{
+    margin-top: 5%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: baseline;
+    padding: 5%;
+}
+
+.back-to-index{
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+.button{ 
+    background-color: #F66B0E;
+    color: white;
+    border-radius: 25px;
+    border: none;
+    margin-bottom: 5%;
+    width: 140px;
+    height: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+
+

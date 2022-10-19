@@ -29,14 +29,21 @@
     <link rel="icon" type="image/x-icon" href="/TRES/Images/Main page/Favicon.png">
 </head>
 <body>
-    <div class = "info-list">
-        <div id="user-info" onclick="location.href='/TRES/Profile/Name/changeName.html';"></div>
-        <div id="email-info" onclick="location.href='/TRES/Profile/Email/changeEmail.html';"></div>
-        <div onclick="location.href='/TRES/Profile/Pass/changePass.html';">Cambiar contraseña</div>
+    <div class="main-container">
+        <h1>Datos de la cuenta</h1><br>
+        <div class="second-container">
+                <div class = "info-list">
+                    <div class="user-info" id="user-info" onclick="location.href='/TRES/Profile/Name/changeName.html';"></div>
+                    <div class="email-info" id="email-info" onclick="location.href='/TRES/Profile/Email/changeEmail.html';"></div>
+                    <div class="change-pass" onclick="location.href='/TRES/Profile/Pass/changePass.html';">Cambiar contraseña</div>
+                </div>
+                <div class="buttons">
+                    <form method="post" id="logout-form">
+                        <input type="submit" name="logout" class="button" value="Cerrar sesion"/>
+                    </form>
+                    <a class="back-to-index" href="/TRES/index.html">Volver a inicio</a>
+                </div>
+        </div>    
     </div>
-
-    <form method="post" id="logout-form">
-        <input type="submit" name="logout" class="button" value="Cerrar sesion"/>
-    </form>
 </body>
 </html>
