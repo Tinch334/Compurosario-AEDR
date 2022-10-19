@@ -35,7 +35,6 @@ session_start();
                         //NOT WORKING
                         //Cookies do not work in any of the computers of the members of the group.
                         //We create a cookie that will expire in 30 days and grants the user access to all the files.
-                        //setcookie("userLogged", "pito de mono" , time()+60*60*24*30, "/", 1);
     
                         //Using sessions until issue is resolved.
                         $_SESSION["logged-in"] = $id;

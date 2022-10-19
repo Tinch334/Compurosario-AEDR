@@ -45,9 +45,7 @@
                 $query->bind_result($usr,$av);
                 $query->fetch();
                 $query->close();
-        
-                //echo ("token:". $token);
-                //echo("email:". $email);
+
                 if ($usr) {
                     //We check if the account has been verified
                     if ($av == false) {

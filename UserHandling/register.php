@@ -1,16 +1,15 @@
 <?php 
 include $_SERVER['DOCUMENT_ROOT']."/TRES/auth/data.php";
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+require $_SERVER['DOCUMENT_ROOT'].'/TRES/PHPMailer/src/Exception.php';
+require $_SERVER['DOCUMENT_ROOT'].'/TRES/PHPMailer/src/PHPMailer.php';
+require $_SERVER['DOCUMENT_ROOT'].'/TRES/PHPMailer/src/SMTP.php';
 
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
 
-
-if (isset($_POST['username']) && $_POST['username'] && isset($_POST['email']) && $_POST['email'] && isset($_POST['password']) && $_POST['password']) {
-
+if (isset($_POST['username'])&& $_POST['email'] && $_POST['password']) {
     $checkRepUserQuery = "SELECT username from users where username=? LIMIT 1";
     $checkRepEmailQuery = "SELECT email from users where email=? LIMIT 1";
 
@@ -31,21 +30,16 @@ if (isset($_POST['username']) && $_POST['username'] && isset($_POST['email']) &&
     $checkRepEmail->close();
 
     //We check to make sure the email or username are not in use
-
-
-    
     if ($resultEmail) {
         echo json_encode(array('success' => -2));
-        echo("repeated mail");
     } else if ($resultUser) {
         echo json_encode(array('success' => -1));
-        echo("repeated user");
     }
     else {
-        // para verificar el login se usa password_verify($_POST['password'],$encryptedPass)
+        //Para verificar el login se usa password_verify($_POST['password'],$encryptedPass).
         $encryptedPass = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-        // formando token unico para el mail
+        //Token unico para el mail.
         $token = md5($_POST['email']).rand(10,9999);
 
         //A link taking the user to the verification page.
@@ -71,8 +65,7 @@ if (isset($_POST['username']) && $_POST['username'] && isset($_POST['email']) &&
         $mail->IsHTML(true); // Set email format to HTML
              
         $mail->Subject = 'Por favor verifica tu cuenta';
-        $mail->Body    = $verificationLink;
-            
+        $mail->Body = $verificationLink;
              
         if(!$mail->Send()) {
             echo 'Message could not be sent.';
@@ -95,4 +88,3 @@ if (isset($_POST['username']) && $_POST['username'] && isset($_POST['email']) &&
 }
 $mysqli->close();
 ?>
-
