@@ -2,25 +2,30 @@ html {
     visibility: hidden;
 }
 
+
 body {
     font-family: 'Poppins', sans-serif;
 }
 
-.page-header {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+header{
     background-color: #112B3C;
 }
-
 .header{
     display: flex;
-    justify-content: space-between;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.img-logo {
+    width: 21vh;
+    height: auto;
+    margin-bottom: 2vh;
+    margin-top: 3vh;
 }
 
 .both-div{
-    justify-content: space-between;
-    margin-left: 2em;
+    width: 150vh;
 }
 
 .ad-social{
@@ -28,39 +33,25 @@ body {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 1em;
-    margin-top: 1em;
-}
-
-.img-logo {
-    width: 220px;
-    height: 190px;
-    margin-left: 1.5em;
-    margin-bottom: 1em;
-    margin-top: 1.5em;
+    margin-bottom: 1vh;
+    margin-top: 2vh;
 }
 
 .ad{
-    width: 1350px;
+    width: 115vh;
     height:auto;
 }
 
-.facebookImage{
-    width: auto;
-    height: 40px;
-    margin-left: 2.5em;
+.social{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
 }
 
-.instagramImage{
+.social img{
     width: auto;
-    height: 40px;
-    margin-left: 0.5em;
-}
-
-.mailImage{
-    width: auto;
-    height: 40px;
-    margin-left: 0.5em;
+    height: 5vh;
+    margin-left: 1vh;
 }
 
 .page-interactive {
@@ -69,7 +60,6 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-bottom: 1.5em;
 }
 
 .search-bar-div {
@@ -83,50 +73,42 @@ body {
 
 .search-bar {
     width: 100%;
-    height: 40px;
-    border-radius: 3px;
+    height: 5vh;
+    border-radius: 0.3vh;
     border-style: hidden;
     padding-left: 18px;
 }
 
 
 .search-button {
-    width: 1.5em;
+    width: 2.5vh;
     height: auto;
-    margin-left: -2.5em;
+    margin-left: -4.5vh;
 }
 
 .header-button-text {
-    font-size: 100%;
+    font-size: 1.6vh;
     font-weight: bold;
-    margin-left: 0.05em;
     color: white;
 }
 
 .page-interactive button {
-    height: 40px;
+    height: 5vh;
     cursor: pointer;
     background-color: #F66B0E;
     border: none;
     outline: none;
-    border-radius: 5px;
-    margin-right: 0.3%;
+    border-radius: 1vh;
+    margin-right: 0.3vh;
 }
 
 .cart-button {
-    width: 160px;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    width: 180px;
-    height: 30px;
-    cursor: pointer;
-    background-color: #F66B0E;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    margin-right: 0.3%;
+    width: 18vh;
+    height: auto;
  }
  
 .cart-button-image {
@@ -136,11 +118,11 @@ body {
 }
 
 .login-button {
-    width: 100px;
+    width: 10vh;
 }
 
 .profile-button {
-    width: 70px;
+    width: 8vh;
 }
 
 

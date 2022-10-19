@@ -182,7 +182,7 @@ a{
 .box{
     width:224px;
     height: 350px;
-    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
     border-radius: 10px;
     overflow: hidden;
     margin: 25px;

@@ -46,17 +46,19 @@
             <div class="both-div">
                 <div class="ad-social">
                     <img class="ad" src="/TRES/Images/Main page/ad.png" alt="Publicidad">
-                    <a href="https://www.facebook.com/profile.php?id=100086746214172" target="_blank"><img
-                            class="facebookImage" src="/TRES/Images/Main page/Facebook Icon.png"
-                            alt="Nuestro facebook"></a>
-                    <a href="https://www.instagram.com/compurosariok/" target="_blank"><img class="instagramImage"
-                            src="/TRES/Images/Main page/Instagram Icon.png" alt="Nuestro instagram"></a>
-                    <a href="mailto:compurosario03@gmail.com?subject=Consulta%20CompuRosario"><img class="mailImage"
-                            src="/TRES/Images/Main page/Mail Icon.png" alt="Nuestro mail"></a>
+                    <div class="social">
+                        <a href="https://www.facebook.com/profile.php?id=100086746214172" target="_blank"><img
+                                class="facebookImage" src="/TRES/Images/Main page/Facebook Icon.png"
+                                alt="Nuestro facebook"></a>
+                        <a href="https://www.instagram.com/compurosariok/" target="_blank"><img class="instagramImage"
+                                src="/TRES/Images/Main page/Instagram Icon.png" alt="Nuestro instagram"></a>
+                        <a href="mailto:compurosario03@gmail.com?subject=Consulta%20CompuRosario"><img class="mailImage"
+                                src="/TRES/Images/Main page/Mail Icon.png" alt="Nuestro mail"></a>
+                    </div>
                 </div>
                 <div class="page-interactive">
                     <div class="search-bar-div">
-                        <input class="search-bar" type="text" placeholder="¿Qué estás buscando?">
+                        <input class="search-bar" type="text" value="¿Qué estás buscando?">
                         <input type="image" src="/TRES/Images/Main page/Magnifying glass.svg" class="search-button" />
                     </div>
 
@@ -69,8 +71,7 @@
                         <span class="header-button-text">Ingresar</span>
                     </button>
 
-                    <button type="button" id="profile-button" class="profile-button"
-                        onclick="location.href='/TRES/Profile/profile.html';">
+                    <button type="button" id="profile-button" class="profile-button" onclick="location.href='/TRES/Profile/profile.html';">
                         <span class="header-button-text">PERFIL</span>
                     </button>
                 </div>
@@ -95,7 +96,7 @@
                     <span></span>
                     <label>Contraseña</label>
                 </div>
-                    <input type="submit" value="Ingresar">
+                <input type="submit" value="Ingresar">
             </form>
             <div class="modal-login-errors">
                 <p id="modal-login-user-error">Usuario incorrecto</p>
