@@ -36,7 +36,7 @@ $(document).ready(function() {
                             window.location.replace("");
                         } 
                         $(this).prop('disabled', true);
-                        window.location.replace("/TRES/index.html");
+                        window.location.replace("/TRES/UserHandling/verify-email.html");
                         break;
 
                     case -1:
