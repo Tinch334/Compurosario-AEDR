@@ -32,7 +32,5 @@
     else {
         //The file was called on it's own, return 0.
         echo json_encode(array('success' => 0));
-    }
-
-    
+    }  
 ?>

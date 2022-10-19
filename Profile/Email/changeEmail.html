@@ -25,11 +25,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- page js -->
-    
+    <script src="/TRES/Profile/Email/changeEmail.js" defer></script>
 
     <link rel="icon" type="image/x-icon" href="/TRES/Images/Main page/Favicon.png">
 </head>
 <body>
-    
+    <form method="post" class="new-email-form" id="new-email-form">
+        <div>
+            <input type="text" id="new-email" name="new-email" required=True  placeholder="Ingresa tu nuevo email">
+            <p class="email-existing-error">El correo ingresado ya esta en uso<p>
+            <p class="email-rejected-error">El correo ingresado no es valido<p>
+        </div>
+        <div>
+            <input class="new-email-button" type="submit" value="Cambiar">
+        </div>
+    </form>
 </body>
 </html>
