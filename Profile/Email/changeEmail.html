@@ -16,7 +16,7 @@
 
     <!-- Jquery cdn -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <!-- Segment includer, for including the data -->
     <script src="/TRES/scripts/csi.js" defer></script>
@@ -30,19 +30,24 @@
 
     <link rel="icon" type="image/x-icon" href="/TRES/Images/Main page/Favicon.png">
 </head>
+
 <body>
     <div class="center">
         <h1>Cambio de mail</h1>
         <form method="post" class="new-email-form" id="new-email-form">
-            <div>
-                <input type="text" id="new-email" name="new-email" required=True  placeholder="Ingresa tu nuevo email">
-                <p class="email-existing-error">El correo ingresado ya esta en uso<p>
-                <p class="email-rejected-error">El correo ingresado no es valido<p>
+            <div class="txt_field">
+                <input type="text" id="new-email" name="new-email" required=True>
+                <span></span>
+                <label>Ingrese su nuevo mail</label>
+
             </div>
             <div>
-                <input class="new-email-button" type="submit" value="Cambiar">
+                <p class="email-existing-error">El correo ingresado ya esta en uso</p>
+                <p class="email-rejected-error">El correo ingresado no es válido</p>
+                    <input class="new-email-button" type="submit" value="Cambiar">
             </div>
         </form>
     </div>
 </body>
+
 </html>

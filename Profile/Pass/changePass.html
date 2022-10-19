@@ -34,15 +34,21 @@
     <div class="center">
         <h1>Cambio de contraseña</h1>
         <form method="post" class="new-pass-form" id="new-pass-form">
-            <div>
-                <input type="password" id="new-pass" name="new-pass" required=True  placeholder="Ingresa tu nueva contraseña">
-                <p class="pass-new-error">La nueva contraseña debe ser distinta<p>
+            <div class="txt_field">
+                <input type="password" id="new-pass" name="new-pass" required=True>
+                <span></span>
+                <label>Ingresa tu nueva contraseña</label>
+                
+            </div>
+            <div class="txt_field">
+                <input type="password" id="new-pass-confirm" name="new-pass-confirm" required=True>
+                <span></span>
+                <label>Repeti la contraseña</label>
+                
             </div>
             <div>
-                <input type="password" id="new-pass-confirm" name="new-pass-confirm" required=True  placeholder="Repeti la contraseña">
-                <p class="pass-match-error">Las contraseñas no coinciden<p>
-            </div>
-            <div>
+                <p class="pass-match-error">Las contraseñas no coinciden<p></p>
+                <p class="pass-new-error">La nueva contraseña debe ser distinta<p></p>
                 <input class="new-pass-button" type="submit" value="Cambiar">
             </div>
         </form>
