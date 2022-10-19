@@ -166,7 +166,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     background: white;
-    border-radius: 10px;
+    border-radius: 10px 10px 20px 20px;
     width: 550px;
     box-shadow: 0px 0px 40px;
 }
@@ -182,7 +182,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: 20%;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 /* The Close Button */
@@ -288,17 +288,16 @@ input[type="submit"]:focus {
     font-weight: bolder;
 }
 
-.modal-register-link-div {
+.modal-register-link-div{ 
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
     background-color: #2a6c98;
-    padding: 1%;
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 10px 10px;
 }
 
-.modal-register-text {
-    margin: 0;
+.modal-register-text{
+    margin: 10px;
     color: white;
 }
 
