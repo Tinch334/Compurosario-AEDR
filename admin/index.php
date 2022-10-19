@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/TRES/auth/data.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/TRES/auth/data.php";
 session_start();
 ?>
 
@@ -71,12 +71,10 @@ session_start();
           <span></span>
           <label>Contraseña</label><br>
         </div>
-          <input class="login-button" type="submit" value="Ingresar">
+        <input class="login-button" type="submit" value="Ingresar">
       </form>
     </div>
   </div>
-
-
 </body>
 
 </html>
