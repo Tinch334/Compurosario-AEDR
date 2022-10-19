@@ -60,7 +60,7 @@ session_start();
       <p>
         Por favor, verificar sus credenciales.
       </p>
-      <form action="check_admin.php" method="post" class="credentials-form">
+      <form action="check_admin.php" method="post">
         <div class="txt_field">
           <input type="text" id="username" name="username" required="true">
           <span></span>
@@ -71,7 +71,7 @@ session_start();
           <span></span>
           <label>Contraseña</label><br>
         </div>
-        <input class="login-button" type="submit" value="Ingresar">
+        <input type="submit" value="Ingresar">
       </form>
     </div>
   </div>

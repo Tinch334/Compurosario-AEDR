@@ -44,7 +44,7 @@ $(document).ready(function() {
             success: function(data) //We wait for a response.
             {
                 var jsonData = JSON.parse(data);
- 
+                console.log(data);
                 //We check all possible responses and display the appropriate error message.
                 switch (jsonData.success) {
                     case 1:
