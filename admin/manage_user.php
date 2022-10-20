@@ -4,9 +4,9 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
     
-    require '../UserHandling/PHPMailer/src/Exception.php';
-    require '../UserHandling/PHPMailer/src/PHPMailer.php';
-    require '../UserHandling/PHPMailer/src/SMTP.php';
+    require '../PHPMailer/src/Exception.php';
+    require '../PHPMailer/src/PHPMailer.php';
+    require '../PHPMailer/src/SMTP.php';
 
     // check if user is logged in
     if (!isset($_SESSION['loggedIn']) ||  ! ($_SESSION['loggedIn'])) {
