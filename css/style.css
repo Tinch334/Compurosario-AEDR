@@ -16,14 +16,15 @@ input:focus {outline:none;}
     overflow: hidden;
     background-color: #205375;
     font-weight: bold;
+    align-items: baseline;
 }
 
 .navbar a {
     float: left;
-    font-size: 16px;
+    font-size: 1vw;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 1vw 1.2vw;
     text-decoration: none;
 }
 
@@ -37,11 +38,11 @@ input:focus {outline:none;}
 }
 
 .dropdown .dropdown-button {
-    font-size: 16px;
+    font-size: 1vw;
     border: none;
     outline: none;
     color: white;
-    padding: 14px 16px;
+    padding: 1vw 1.2vw;
     background-color: inherit;
     margin: 0;
 }
