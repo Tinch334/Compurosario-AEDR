@@ -15,7 +15,10 @@ body h1 {
 }
 
 .main-container {
-    margin-top: 10%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .second-container {
@@ -114,3 +117,15 @@ body h1 {
 .button:hover {
     background-color: rgb(219, 95, 12);
 }
+
+@media screen and (max-width: 600px) {
+    .user-info, .email-info{
+        font-size: 4vw;
+    }
+
+    .change-pass{
+        font-size: 4vw;
+        width: 94%;
+    }
+    
+  }
