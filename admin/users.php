@@ -67,12 +67,12 @@ session_start();
     $stmt = $mysqli->query("SELECT username, email, account_verified, num_of_logs, last_log from users where is_blocked=0");
 
 
-    echo ("<th><b>Nombre de usuario</b></th>");
+    echo ("<th class='edge1'><b>Nombre de usuario</b></th>");
     echo ("<th><b>Correo electrónico</b</th>");
     echo ("<th><b>Cuenta verificada</b</th>");
-    echo ("<th><b>Numero de inicios de sesion</b</th>");
-    echo ("<th><b>Ultimo inicio de sesión</b</th>");
-    echo ("<th><b>Administrar usuario</b</th>");
+    echo ("<th><b>Número de inicios de sesión</b</th>");
+    echo ("<th><b>Último inicio de sesión</b</th>");
+    echo ("<th class='edge2'><b>Administrar usuario</b</th>");
 
     while ($row = $stmt->fetch_assoc()) {
         echo "<tr><td>";
@@ -108,12 +108,12 @@ session_start();
     if (($stmt2->num_rows) == 0) {
         echo "<p>Actualmente no hay usuarios bloqueados</p>";
     } else {
-        echo ("<td><b>Nombre de usuario</b></td>");
-        echo ("<td><b>Correo electrónico</b</td>");
-        echo ("<td><b>Cuenta verificada</b</td>");
-        echo ("<td><b>Numero de inicios de sesion</b</td>");
-        echo ("<td><b>Ultimo inicio de sesión</b</td>");
-        echo ("<td><b>Administrar usuario</b</td>");
+        echo ("<th class='edge1'><b>Nombre de usuario</b></th>");
+        echo ("<th><b>Correo electrónico</b</th>");
+        echo ("<th><b>Cuenta verificada</b</th>");
+        echo ("<th><b>Número de inicios de sesión</b</th>");
+        echo ("<th><b>Último inicio de sesión</b</th>");
+        echo ("<th class='edge2'><b>Administrar usuario</b</th>");
 
         while ($row = $stmt2->fetch_assoc()) {
             echo "<tr><td>";

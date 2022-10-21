@@ -26,6 +26,15 @@ tr:nth-of-type(odd) {
     background-color: #d8d6d6;
 }
 
+tr:hover {background-color: rgb(184, 182, 181);}
+
+.edge2{
+    border-radius: 0 10px 0 0;
+}
+
+.edge1{
+    border-radius: 10px 0 0 0;
+}
 
 table{
     border-collapse: collapse;
@@ -33,6 +42,7 @@ table{
     font-size: 0.9em;
     font-family: sans-serif;
     min-width: 100%;
+    border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -54,3 +64,22 @@ input[type="submit"]:focus {
     background-color: #e63434;
     transition: .2s;
 }
+
+input[type="text"]{
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+    background-color: white;
+    border-radius: 3px;
+    
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus {
+    background-color: #dddddd;
+    transition: .2s;
+}
+
+
