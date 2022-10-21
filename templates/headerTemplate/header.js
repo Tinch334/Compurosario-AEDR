@@ -32,6 +32,11 @@ $(document).ready(function() {
     $("#profile-button").hide();
 });
 
+//Hide page until it fully loads.
+$(window).on('load', function () {
+    document.body.style.visibility = "visible";
+});
+
 $(document).ready(function() {
     $('#login-form').submit(function(e) {
         //Hides all error messages when button is pressed, to avid repeats.
