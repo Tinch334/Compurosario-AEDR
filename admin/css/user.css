@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding: 5vw;
+    font-family: 'Poppins';
+    height: 100vh;
+    overflow: hidden;
+    background-color: #EFEFEF;
+}
+
+td, th{
+    padding: 12px 15px;
+}
+
+th{
+    background-color: #205375;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bolder;
+}
+
+tr{
+    text-align: left;
+}
+
+tr:nth-of-type(odd) {
+    background-color: #d8d6d6;
+}
+
+
+table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+input[type="submit"] {
+    background-color: #e63434;
+    color: white;
+    border-radius: 25px;
+    border: none;
+    margin-left: 5px;    
+    width: 7vw;
+    height: 2vw;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+    background-color: #e63434;
+    transition: .2s;
+}
