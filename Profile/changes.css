@@ -30,6 +30,8 @@ body {
     box-sizing: border-box;
 }
 
+
+
 form .txt_field {
     position: relative;
     border-bottom: 2px solid #adadad;
@@ -80,20 +82,50 @@ form .txt_field {
     width: 100%;
 }
 
-input[type="submit"] {
+.buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: baseline;
+    justify-content: space-around;
+}
+
+.change-button {
     background-color: #F66B0E;
     color: white;
     border-radius: 25px;
     border: none;
-    width: 100%;
+    width: 47%;
     height: 50px;
     font-weight: 700;
     cursor: pointer;
     outline: none;
 }
 
-input[type="submit"]:hover,
-input[type="submit"]:focus {
+.change-button:hover,
+.change-button:focus {
     background-color: #e0600b;
     transition: .2s;
 }
+
+@media screen and (max-width: 600px) {
+    .center {
+        width: 78vw;
+    }
+    .center h1{
+        font-size: 6vw;
+    }
+
+    .center p{
+        font-size: 3vw;
+    }
+
+    .change-button{
+        height: 8vw;
+    }
+
+    .txt_field label{
+        font-size: 3.5vw;
+    }
+  }

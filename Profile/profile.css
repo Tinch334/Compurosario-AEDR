@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family:'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     height: 100vh;
     overflow: hidden;
     background-color: #EFEFEF;
@@ -10,13 +10,15 @@ body {
     justify-content: center;
 }
 
-body h1{
-    font-family:'Poppins', sans-serif;
+body h1 {
+    font-family: 'Poppins', sans-serif;
 }
-.main-container{
+
+.main-container {
     margin-top: 10%;
 }
-.second-container{
+
+.second-container {
     background: white;
     border-radius: 10px;
     width: 700px;
@@ -24,12 +26,21 @@ body h1{
     padding-bottom: 15px;
 }
 
+@media screen and (max-width: 800px) {
+    .second-container {
+        width: 78vw;
+    }
+    body h1{
+        font-size: 8vw;
+    }
+  }
 
-.info-list{
+
+.info-list {
     font-size: 20px;
 }
 
-.txt-field{
+.txt-field {
     cursor: pointer;
     border-bottom: 1px solid rgba(192, 192, 192, 0.486);
     padding: 2%;
@@ -39,20 +50,22 @@ body h1{
     align-items: center;
 }
 
-.txt-field:hover, .txt-field:focus{
+.txt-field:hover,
+.txt-field:focus {
     background-color: rgb(240, 240, 240);
 }
 
-.arrow-icon{
+.arrow-icon {
     width: 17px;
     height: auto;
 }
 
-.user-info, .email-info{
+.user-info,
+.email-info {
     margin-left: 1%;
 }
 
-.change-pass{
+.change-pass {
     background-color: #1A73E9;
     width: 270px;
     color: white;
@@ -64,11 +77,12 @@ body h1{
     padding: 5px;
 }
 
-.change-pass:hover, .change-pass:hover{
+.change-pass:hover,
+.change-pass:hover {
     background-color: #1666cf;
 }
 
-.buttons{
+.buttons {
     margin-top: 5%;
     display: flex;
     flex-wrap: nowrap;
@@ -77,14 +91,14 @@ body h1{
     align-items: baseline;
 }
 
-.back-to-index{
+.back-to-index {
     font-weight: 700;
     cursor: pointer;
     outline: none;
 }
 
 
-.button{ 
+.button {
     background-color: #F66B0E;
     color: white;
     border-radius: 4px;
@@ -97,9 +111,6 @@ body h1{
     outline: none;
 }
 
-.button:hover{
+.button:hover {
     background-color: rgb(219, 95, 12);
 }
-
-
-
